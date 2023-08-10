@@ -6,6 +6,7 @@ import Button from './Button';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
+	{ label: 'Home', href: '/' },
 	{ label: 'About', href: '/about' },
 	{ label: 'Services', href: '/services' },
 	{ label: 'Projects', href: '/projects' },
@@ -17,7 +18,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
 		<li>
 			<a
 				href={href}
-				className='hover:text-blue-400 py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-blue-400 before:opacity-0 hover:before:opacity-100 before:pointer-events-none'
+				className='hover:text-red-600 py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-red-600 before:opacity-0 hover:before:opacity-100 before:pointer-events-none'
 			>
 				{label}
 			</a>

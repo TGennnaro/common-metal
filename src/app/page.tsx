@@ -1,4 +1,5 @@
 import Gallery from '@/components/Gallery';
+import ProjectCard from '@/components/ProjectCard';
 import ServiceItem from '@/components/ServiceItem';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -12,7 +13,46 @@ export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col'>
 			<Gallery />
-			<section className='px-8 py-16 flex justify-between flex-wrap gap-4'>
+			<section className='flex flex-col gap-8 py-16 px-8'>
+				<h1 className='text-center text-4xl font-semibold italic'>
+					We Provide <span className='text-red-600'>High Quality</span> Services
+				</h1>
+				<div className='flex justify-center gap-8'>
+					<ServiceItem
+						title='Fabrication & Processing'
+						image='/services/fabrication.webp'
+						href='/services/fabrication'
+					/>
+					<ServiceItem
+						title='Supply of Raw Materials'
+						image='/services/raw_materials.jpg'
+					/>
+					<ServiceItem
+						title='Welding Capabilities'
+						image='/services/welding.webp'
+					/>
+				</div>
+			</section>
+			<hr className='w-5/6 mx-auto' />
+			<section className='flex flex-col gap-8 py-16 px-8'>
+				<h1 className='text-center text-4xl font-semibold italic'>
+					<span className='text-red-600'>Solutions</span> For Any Project
+				</h1>
+				<div className='w-fit grid grid-cols-4 gap-8 mx-auto'>
+					<ProjectCard title='Bridges' image='/projects/bridge.jpg' />
+					<ProjectCard title='Railroads' image='/projects/railroads.jpg' />
+					<ProjectCard title='Grates' image='/projects/grates.webp' />
+					<ProjectCard title='Screens' image='/projects/screens.jpg' />
+					<ProjectCard title='Staircases' image='/projects/stairs.jpg' />
+					<ProjectCard
+						title='Parking Pillars'
+						image='/projects/parking_pillars.jpg'
+					/>
+					<ProjectCard title='Railings' image='/projects/railings.jpg' />
+					<ProjectCard title='Elevators' image='/projects/elevators.jpg' />
+				</div>
+			</section>
+			{/* <section className='px-8 py-16 flex justify-between flex-wrap gap-4'>
 				<div className='max-w-screen-md'>
 					<h1 className='text-4xl font-medium mb-4'>Who we are...</h1>
 					<p className='leading-normal text-gray-600'>
@@ -33,9 +73,8 @@ export default function Home() {
 					</p>
 				</div>
 				<Image src='/steel4.jpg' alt='steel_image' width={300} height={300} />
-			</section>
-			<hr className='w-5/6 mx-auto' />
-			<section className='px-8 py-16 flex flex-col gap-4 justify-between'>
+			</section> */}
+			{/* <section className='px-8 py-16 flex flex-col gap-4 justify-between'>
 				<h1 className='text-4xl font-medium mb-4'>What we do...</h1>
 				<div className='flex justify-center gap-8 flex-wrap'>
 					<ServiceItem
@@ -54,7 +93,7 @@ export default function Home() {
 						description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore recusandae nobis corrupti inventore vel nulla, molestiae soluta aut consequuntur porro officiis, odio, nam voluptatibus autem fuga laborum accusamus possimus aspernatur rerum reiciendis hic laudantium quas corporis! Ullam, totam. Beatae, quisquam!'
 					/>
 				</div>
-			</section>
+			</section> */}
 		</main>
 	);
 }

@@ -16,11 +16,16 @@ function GalleryItem({
 	description?: string;
 }) {
 	return (
-		<div className='relative h-[400px] w-[calc(100vw_-_1rem)]'>
-			<Image src={image} alt='steel_image' layout='fill' objectFit='cover' />
+		<div className='relative h-[500px] w-[calc(100vw_-_1rem)]'>
+			<Image
+				src={image}
+				alt='steel_image'
+				layout='fill'
+				className='object-cover'
+			/>
 			{description && (
-				<div className='absolute inset-0 z-10 flex items-center justify-center'>
-					<span className='text-center text-xl lg:text-3xl font-bold text-white bg-black/30 p-4 rounded-md'>
+				<div className='absolute inset-0 z-10 flex items-center justify-center bg-black/40'>
+					<span className='text-center text-xl lg:text-5xl font-bold text-white p-4 rounded-md [text-shadow:_0_2px_4px_rgba(0,_0,_0,_0.4)]'>
 						{description}
 					</span>
 				</div>
@@ -62,7 +67,7 @@ export default function Gallery() {
 			/>
 			<GalleryItem
 				image={`/steel2.jpg`}
-				description='Providing you with the equipment and services you need'
+				description='Providing you with the service and expertise you need'
 			/>
 			<GalleryItem
 				image={`/steel3.jpg`}
