@@ -8,7 +8,7 @@ const Button = forwardRef<
 	return (
 		<button
 			ref={ref}
-			className={cn('p-2 rounded-md bg-blue-700', className)}
+			className={cn('p-2 rounded-md bg-red-600 text-white', className)}
 			{...props}
 		>
 			{children}
