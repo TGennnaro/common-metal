@@ -16,18 +16,39 @@ export default function Footer() {
 					<span>Fax: 215 938-0129</span>
 					<span>Email: cmc_inc_@hotmail.com</span>
 				</div>
-				<div className='ml-auto'>
-					<ul className='flex gap-4'>
+				<div className='ml-auto flex flex-col justify-between items-center'>
+					<ul className='flex gap-4 font-medium'>
 						<li>
-							<a href='linkedin.com'>LinkedIn</a>
+							<a href='https://linkedin.com' target='_blank'>
+								LinkedIn
+							</a>
 						</li>
 						<li>
-							<a href='facebook.com'>Facebook</a>
+							<a href='https://facebook.com' target='_blank'>
+								Facebook
+							</a>
 						</li>
 						<li>
-							<a href='twitter.com'>Twitter</a>
+							<a href='https://twitter.com' target='_blank'>
+								Twitter
+							</a>
 						</li>
 					</ul>
+					<div className='flex items-center justify-between gap-8'>
+						<Image
+							src='/women-owned.png'
+							alt='women_owned'
+							width={96}
+							height={96}
+							className='h-fit'
+						/>
+						<Image
+							src='/dbe-certified.webp'
+							alt='dbe_certified'
+							width={96}
+							height={96}
+						/>
+					</div>
 				</div>
 			</div>
 			<div className='p-2 text-center'>
