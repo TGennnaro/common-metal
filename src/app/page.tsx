@@ -1,5 +1,7 @@
 import Gallery from '@/components/Gallery';
+import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
+import Section from '@/components/Section';
 import ServiceItem from '@/components/ServiceItem';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -14,10 +16,15 @@ export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col'>
 			<Gallery />
-			<section className='flex flex-col gap-8 py-16 px-8'>
-				<h1 className='text-center text-4xl font-semibold italic'>
-					We Provide <span className='text-red-600'>High Quality</span> Services
-				</h1>
+			<Section>
+				<Hero
+					title={
+						<span>
+							We Provide <span className='text-red-600'>High Quality</span>{' '}
+							Services
+						</span>
+					}
+				/>
 				<div className='flex justify-center gap-8'>
 					<ServiceItem
 						title='Fabrication & Processing'
@@ -33,23 +40,19 @@ export default function Home() {
 						image='/services/welding.webp'
 					/>
 				</div>
-			</section>
+			</Section>
 			{/* <hr className='w-5/6 mx-auto' /> */}
-			<section className='flex flex-col gap-8 py-16 px-8 bg-zinc-50 border-y border-zinc-200'>
-				<div className='text-center'>
-					<h1 className='text-center text-4xl font-semibold italic mb-4'>
-						<Balancer>
+			<Section className='bg-zinc-50 border-y border-zinc-200'>
+				<Hero
+					title={
+						<span>
 							<span className='text-red-600'>Solutions</span> For Any Project
-						</Balancer>
-					</h1>
-					<span className='text-zinc-600 leading-relaxed'>
-						<Balancer>
-							At Commonwealth Metal, we take pride in being your dependable
-							partner for welding and fabrication needs, offering tailored
-							solutions to meet the unique requirements of every project.
-						</Balancer>
-					</span>
-				</div>
+						</span>
+					}
+					description='At Commonwealth Metal, we take pride in being your dependable partner
+					for welding and fabrication needs, offering tailored solutions to meet
+					the unique requirements of every project.'
+				/>
 				<div className='w-fit grid grid-cols-4 gap-8 mx-auto'>
 					<ProjectCard title='Bridges' image='/projects/bridge.jpg' />
 					<ProjectCard title='Railroads' image='/projects/railroads.jpg' />
@@ -63,12 +66,17 @@ export default function Home() {
 					<ProjectCard title='Railings' image='/projects/railings.jpg' />
 					<ProjectCard title='Elevators' image='/projects/elevators.jpg' />
 				</div>
-			</section>
+			</Section>
 			{/* <hr className='w-5/6 mx-auto' /> */}
-			<section className='flex flex-col gap-8 py-16 px-8'>
-				<h1 className='text-center text-4xl font-semibold italic'>
-					Trusted By <span className='text-red-600'>Experts</span> Since 1988
-				</h1>
+			<Section>
+				<Hero
+					title={
+						<span>
+							Trusted By <span className='text-red-600'>Experts</span> Since
+							1988
+						</span>
+					}
+				/>
 				<div className='flex gap-8 justify-center flex-wrap'>
 					<Image
 						src='clients/septa.svg'
@@ -108,7 +116,7 @@ export default function Home() {
 					/>
 				</div>
 				{/* SEPTA, Walsh Company, PKF, Rockport Construction */}
-			</section>
+			</Section>
 			{/* <section className='px-8 py-16 flex justify-between flex-wrap gap-4'>
 				<div className='max-w-screen-md'>
 					<h1 className='text-4xl font-medium mb-4'>Who we are...</h1>
