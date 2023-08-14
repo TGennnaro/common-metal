@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Logo from './Logo';
 import Button from './Button';
 import { ChevronDown, Menu, X } from 'lucide-react';
@@ -28,12 +29,17 @@ const navItems = [
 	{ label: 'Contact', href: '/contact' },
 ];
 
-function NavItem({ item }: { item: NavItem }) {
+function NavItem({ item, selected }: { item: NavItem; selected: boolean }) {
+	const linkClassName = `w-fit flex items-center cursor-pointer py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-red-600 hover:before:opacity-100 before:pointer-events-none ${
+		selected
+			? 'before:opacity-100 text-red-600'
+			: 'before:opacity-0 hover:text-red-600'
+	}`;
 	if (item.subItems) {
 		return (
 			<HoverCard openDelay={0} closeDelay={0}>
 				<HoverCardTrigger asChild>
-					<li className='flex items-center cursor-pointer hover:text-red-600 py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-red-600 before:opacity-0 hover:before:opacity-100 before:pointer-events-none'>
+					<li className={linkClassName}>
 						{item.label}
 						<ChevronDown className='w-4 h-4 ml-1' />
 					</li>
@@ -55,10 +61,7 @@ function NavItem({ item }: { item: NavItem }) {
 	} else {
 		return (
 			<li>
-				<a
-					href={item.href}
-					className='flex hover:text-red-600 py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-red-600 before:opacity-0 hover:before:opacity-100 before:pointer-events-none'
-				>
+				<a href={item.href} className={linkClassName}>
 					{item.label}
 				</a>
 			</li>
@@ -67,6 +70,7 @@ function NavItem({ item }: { item: NavItem }) {
 }
 
 export default function NavBar() {
+	const path = usePathname();
 	const [scrolled, setScrolled] = useState(false);
 	const [navOpen, setNavOpen] = useState(false);
 	useEffect(() => {
@@ -83,16 +87,23 @@ export default function NavBar() {
 		>
 			<Logo />
 			<ul
-				className={`gap-4 font-medium absolute top-full -z-[999] left-0 p-4 bg-white w-full flex flex-col md:gap-8 md:p-0 md:static md:flex-row md:w-auto transition-all md:opacity-100 md:translate-y-0 ${
+				className={`gap-4 font-medium absolute top-full -z-[999] left-0 p-4 bg-white border-t border-zinc-200 md:border-none w-full flex flex-col md:gap-8 md:p-0 md:static md:flex-row md:w-auto shadow-lg md:shadow-none transition-all md:opacity-100 md:translate-y-0 ${
 					navOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
 				}`}
 			>
 				{navItems.map((item, index) => (
-					<NavItem key={index} item={item} />
+					<NavItem
+						key={index}
+						item={item}
+						selected={
+							(item.href === '/' && path === '/') ||
+							(item.href !== '/' && path.startsWith(item.href))
+						}
+					/>
 				))}
 			</ul>
 			<Button
-				className='bg-white border border-zinc-200 block md:hidden'
+				className='bg-white border border-zinc-200 text-zinc-800 block md:hidden'
 				onClick={() => setNavOpen(!navOpen)}
 			>
 				<Menu />
