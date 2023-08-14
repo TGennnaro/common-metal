@@ -1,23 +1,15 @@
 import Button from '@/components/Button';
+import HeaderImage from '@/components/HeaderImage';
 import Image from 'next/image';
 
 export default function Page() {
 	return (
 		<main>
-			<section className='w-full h-[240px] relative shadow-lg'>
-				<Image
-					src='/about-us/hero-img.jpg'
-					alt='bridge'
-					layout='fill'
-					className='object-cover object-top'
-				/>
-				<div className='absolute inset-0 bg-black/40 flex items-center justify-center'>
-					<span className='text-4xl font-bold text-white [text-shadow:_0_2px_4px_rgba(0,_0,_0,_0.4)]'>
-						About Us
-					</span>
-				</div>
-			</section>
-
+			<HeaderImage
+				image='/about-us/hero-img.jpg'
+				alt='bridge'
+				title='About Us'
+			/>
 			<section className='px-8 py-16 columns-3 gap-x-8 [&>p]:indent-8 [&>p]:text-justify leading-relaxed'>
 				<div className='w-fit mx-auto'>
 					<Image
@@ -39,15 +31,15 @@ export default function Page() {
 					insights into the industry&apos;s dynamics.
 				</p>
 				<p>
-					Nestled in the heart of Philadelphia, Commonwealth Metal stands as a
-					warehouse distribution powerhouse, offering an array of metal options
-					including structural carbon steel, stainless steel, aluminum, copper,
-					and brass. Our commitment to innovation and durability is evident
-					through our range of abrasive stair products, designed for both indoor
-					and outdoor use. What sets us apart is our dedication to tailoring
-					solutions - from precision cutting to specialty fabrication - to cater
-					to the unique demands of each project. At the core of our company is a
-					team of skilled professionals, including certified welders, who bring
+					Nestled around Philadelphia, Commonwealth Metal stands as a warehouse
+					distribution powerhouse, offering an array of metal options including
+					structural carbon steel, stainless steel, aluminum, copper, and brass.
+					Our commitment to innovation and durability is evident through our
+					range of abrasive stair products, designed for both indoor and outdoor
+					use. What sets us apart is our dedication to tailoring solutions -
+					from precision cutting to specialty fabrication - to cater to the
+					unique demands of each project. At the core of our company is a team
+					of skilled professionals, including certified welders, who bring
 					diverse expertise to every endeavor. We take pride in our affiliations
 					with industry associations such as the Association of Women in the
 					Metal Industry, and our leadership roles in the National Association
