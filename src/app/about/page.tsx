@@ -2,6 +2,11 @@ import Button from '@/components/Button';
 import HeaderImage from '@/components/HeaderImage';
 import Image from 'next/image';
 
+// Reformat
+// Add potential video of Suzzanne as intro
+// More pictures, information about company
+// Less paragraph-style content
+
 export default function Page() {
 	return (
 		<main>
