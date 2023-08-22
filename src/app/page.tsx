@@ -34,6 +34,7 @@ export default function Home() {
 					<ServiceItem
 						title='Supply of Raw Materials'
 						image='/services/raw_materials.jpg'
+						href='/services/supply'
 					/>
 					<ServiceItem
 						title='Welding Capabilities'
