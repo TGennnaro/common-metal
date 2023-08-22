@@ -20,7 +20,7 @@ export default function Page() {
 					</h3>
 					<div className='flex gap-4 flex-wrap'>
 						{Array.from({ length: 8 }).map((_, i) => (
-							<div className='relative w-64 h-80'>
+							<div className='relative w-64 h-80' key={i}>
 								<Image
 									src={`/projects/wawa_station/wawa-${i + 1}.jpg`}
 									alt={`wawa_station_${i}`}
