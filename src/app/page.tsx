@@ -5,7 +5,6 @@ import Section from '@/components/Section';
 import ServiceItem from '@/components/ServiceItem';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Balancer from 'react-wrap-balancer';
 
 export const metadata: Metadata = {
 	title: 'Commonwealth Metal Company',
@@ -43,7 +42,7 @@ export default function Home() {
 				</div>
 			</Section>
 			{/* <hr className='w-5/6 mx-auto' /> */}
-			<Section className='bg-zinc-50 border-y border-zinc-200'>
+			<Section sectionClass='bg-zinc-50 border-y border-zinc-200'>
 				<Hero
 					title={
 						<span>
