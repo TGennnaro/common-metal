@@ -26,7 +26,7 @@ function GalleryItem({
 			/>
 			{description && (
 				<div className='absolute inset-0 p-16 z-10 flex items-center justify-center bg-black/40'>
-					<span className='text-center text-xl lg:text-5xl !leading-snug font-bold text-white p-4 rounded-md [text-shadow:_0_2px_4px_rgba(0,_0,_0,_0.4)]'>
+					<span className='text-center text-xl lg:text-5xl !leading-snug font-bold text-white p-4 rounded-md [text-shadow:_0_2px_4px_rgba(0,_0,_0,_0.4)] max-w-screen-xl'>
 						<Balancer>{description}</Balancer>
 					</span>
 				</div>

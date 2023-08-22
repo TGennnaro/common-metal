@@ -30,7 +30,7 @@ const navItems = [
 ];
 
 function NavItem({ item, selected }: { item: NavItem; selected: boolean }) {
-	const linkClassName = `w-fit flex items-center cursor-pointer py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-red-600 hover:before:opacity-100 before:pointer-events-none ${
+	const linkClassName = `w-fit flex items-center font-semibold cursor-pointer py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-red-600 hover:before:opacity-100 before:pointer-events-none ${
 		selected
 			? 'before:opacity-100 text-red-600'
 			: 'before:opacity-0 hover:text-red-600'
@@ -81,33 +81,37 @@ export default function NavBar() {
 	}, []);
 	return (
 		<div
-			className={`sticky top-0 p-4 flex justify-between items-center transition z-[999] bg-white ${
+			className={`sticky top-0 transition z-[999] bg-white ${
 				scrolled ? 'border-b border-zinc-200 shadow-md' : ''
 			}`}
 		>
-			<Logo />
-			<ul
-				className={`gap-4 font-medium absolute top-full -z-[999] left-0 p-4 bg-white border-t border-zinc-200 md:border-none w-full flex flex-col md:gap-8 md:p-0 md:static md:flex-row md:w-auto shadow-lg md:shadow-none transition-all md:opacity-100 md:translate-y-0 ${
-					navOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-				}`}
-			>
-				{navItems.map((item, index) => (
-					<NavItem
-						key={index}
-						item={item}
-						selected={
-							(item.href === '/' && path === '/') ||
-							(item.href !== '/' && path.startsWith(item.href))
-						}
-					/>
-				))}
-			</ul>
-			<Button
-				className='bg-white border border-zinc-200 text-zinc-800 block md:hidden'
-				onClick={() => setNavOpen(!navOpen)}
-			>
-				<Menu />
-			</Button>
+			<div className='max-w-screen-xl mx-auto p-4 flex justify-between items-center'>
+				<Logo />
+				<ul
+					className={`gap-4 font-medium absolute top-full left-0 -z-[999] md:z-0 p-4 bg-white border-t border-zinc-200 md:border-none w-full flex flex-col md:gap-8 md:p-0 md:static md:flex-row md:w-auto shadow-lg md:shadow-none transition-all md:opacity-100 md:translate-y-0 duration-300 ${
+						navOpen
+							? 'translate-y-0 opacity-100'
+							: '-translate-y-full opacity-0'
+					}`}
+				>
+					{navItems.map((item, index) => (
+						<NavItem
+							key={index}
+							item={item}
+							selected={
+								(item.href === '/' && path === '/') ||
+								(item.href !== '/' && path.startsWith(item.href))
+							}
+						/>
+					))}
+				</ul>
+				<Button
+					className='bg-white border border-zinc-200 text-zinc-800 block md:hidden'
+					onClick={() => setNavOpen(!navOpen)}
+				>
+					<Menu />
+				</Button>
+			</div>
 		</div>
 	);
 }
