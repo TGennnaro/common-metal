@@ -10,11 +10,11 @@ export default function Hero({
 }) {
 	return (
 		<div className='text-center'>
-			<h1 className='text-center text-4xl font-semibold italic'>
+			<h1 className='text-center text-5xl font-semibold'>
 				<Balancer>{title}</Balancer>
 			</h1>
 			{description && (
-				<span className='text-zinc-600 leading-relaxed mt-4 block'>
+				<span className='leading-relaxed text-xl text-zinc-600 mt-4 block'>
 					<Balancer>{description}</Balancer>
 				</span>
 			)}
