@@ -1,5 +1,6 @@
 import BlurCard from '@/components/BlurCard';
 import Button from '@/components/Button';
+import ContactButton from '@/components/ContactButton';
 import Divider from '@/components/Divider';
 import HeaderImage from '@/components/HeaderImage';
 import Hero from '@/components/Hero';
@@ -77,12 +78,7 @@ export default function Page() {
 			<Divider />
 			<Section className='items-center'>
 				<Hero title={<span>Need something not listed? Let us know!</span>} />
-				<a href='/contact'>
-					<Button>
-						<Phone className='w-6 h-6 mr-2' />
-						Contact Us
-					</Button>
-				</a>
+				<ContactButton />
 			</Section>
 		</main>
 	);
