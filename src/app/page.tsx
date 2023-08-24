@@ -24,7 +24,7 @@ export default function Home() {
 						</span>
 					}
 				/>
-				<div className='flex justify-center gap-8'>
+				<div className='flex justify-center gap-8 flex-wrap'>
 					<ServiceItem
 						title='Fabrication & Processing'
 						image='/services/fabrication.webp'
@@ -42,7 +42,7 @@ export default function Home() {
 				</div>
 			</Section>
 			{/* <hr className='w-5/6 mx-auto' /> */}
-			<Section sectionClass='bg-zinc-50 border-y border-zinc-200'>
+			<Section className='bg-zinc-50 border-y border-zinc-200'>
 				<Hero
 					title={
 						<span>
