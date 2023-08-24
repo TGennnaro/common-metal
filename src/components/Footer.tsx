@@ -12,7 +12,7 @@ export default function Footer() {
 							Commonwealth Metal Company
 						</span>
 						<span>1957 Pioneer Road, Building E-1</span>
-						<span>Huntington Valley, PA 19006-0312</span>
+						<span>Huntingdon Valley, PA 19006-0312</span>
 						<span className='mt-4'>Phone: 215 938-0810</span>
 						<span>Fax: 215 938-0129</span>
 						<span>Email: cmc_inc_@hotmail.com</span>
