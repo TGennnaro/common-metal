@@ -4,7 +4,7 @@ export default function ServiceItem({
 	image,
 	title,
 	href,
-	size = 400,
+	size = 360,
 	textSize = 'text-2xl',
 }: {
 	image: string;
