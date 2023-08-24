@@ -28,7 +28,8 @@
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.6",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "yet-another-react-lightbox": "^3.12.1"
   },
   "devDependencies": {
     "prettier": "^3.0.1",
