@@ -1,25 +1,31 @@
 import { cn } from '@/lib/utils';
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
-export default function Section({
-	children,
-	className,
-	sectionClass,
-}: {
+interface SectionProps {
 	children: ReactNode;
-	className?: string;
 	sectionClass?: string;
-}) {
-	return (
-		<section className={sectionClass}>
-			<div
+	className?: string;
+	id?: string;
+}
+
+const Section = forwardRef<HTMLElement, SectionProps>(
+	({ children, className = '', ...props }, ref) => {
+		return (
+			<section
+				ref={ref}
+				id={props.id}
 				className={cn(
 					'flex flex-col gap-8 py-16 px-8 max-w-screen-xl mx-auto',
-					className ?? ''
+					className
 				)}
+				{...props}
 			>
 				{children}
-			</div>
-		</section>
-	);
-}
+			</section>
+		);
+	}
+);
+
+Section.displayName = 'Section';
+
+export default Section;
