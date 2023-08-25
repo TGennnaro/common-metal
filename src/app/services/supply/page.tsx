@@ -1,25 +1,13 @@
-import Button from '@/components/Button';
 import ContactButton from '@/components/ContactButton';
 import Divider from '@/components/Divider';
 import HeaderImage from '@/components/HeaderImage';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
+import { getMetadata } from '@/lib/utils';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
-/*
-	Bars
-		- Hot rolled
-		- Bar shapes
-	Plates and Sheets:
-		- All grades
-	Structurals:
-		- Angles
-		- Beams
-		- Channels
-		- Tubing
-		- Rectangular
-		- Pipe
-*/
+export const metadata: Metadata = getMetadata('Supply of Raw Materials');
 
 function ImageItem({ image, text }: { image: string; text: string }) {
 	return (
@@ -45,7 +33,7 @@ export default function Page() {
 				<Hero title='Learn About The Products We Sell' />
 			</Section>
 			<Divider />
-			<Section className='max-w-screen-xl mx-auto'>
+			<Section>
 				<div className='flex justify-between'>
 					<div className='flex justify-center bg-zinc-100 p-8 rounded-lg shadow-xl'>
 						<div className='w-80 aspect-square relative'>
@@ -69,7 +57,7 @@ export default function Page() {
 					</div>
 				</div>
 			</Section>
-			<Section className='bg-zinc-50 border-y border-zinc-200'>
+			<Section sectionClass='bg-zinc-50 border-y border-zinc-200'>
 				<div className='flex justify-between max-w-screen-xl mx-auto'>
 					<div className='w-1/2 flex flex-col text-justify'>
 						<h2 className='text-4xl font-semibold mb-4'>Plates and Sheets</h2>
@@ -94,7 +82,7 @@ export default function Page() {
 					</div>
 				</div>
 			</Section>
-			<Section className='max-w-screen-xl mx-auto'>
+			<Section>
 				<div>
 					<h2 className='text-4xl font-semibold mb-4'>Structural Steel</h2>
 					<p className='leading-relaxed text-xl text-zinc-600'>
@@ -114,7 +102,7 @@ export default function Page() {
 				</div>
 			</Section>
 			<Divider />
-			<Section className='flex flex-col items-center max-w-screen-xl mx-auto'>
+			<Section className='items-center'>
 				<Hero title='Interested In a Purchase?' />
 				<ContactButton />
 			</Section>

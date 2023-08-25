@@ -67,36 +67,37 @@ export default function ImageGallery() {
 	const [page, setPage] = useState(-1);
 	return (
 		<>
-			<div className='flex gap-4 sticky top-20 bg-white/40 backdrop-blur-lg z-10 p-4 border-y border-zinc-200 overflow-x-auto'>
-				{projects.map((project, i) => (
-					<a
-						href={`#${project.title.toLowerCase().replace(' ', '_')}`}
-						key={project.title}
-						className='shrink-0'
-					>
-						<Button className='p-2 rounded-3xl bg-white border border-zinc-200 text-black hover:brightness-90'>
-							<project.icon className='w-4 h-4 mr-2' />
-							{project.title}
-						</Button>
-					</a>
-				))}
+			<div className='sticky top-20 bg-white/40 backdrop-blur-lg z-10 border-y border-zinc-200'>
+				<div className='flex gap-4 p-4 overflow-x-auto max-w-screen-xl mx-auto w-full'>
+					{projects.map((project, i) => (
+						<a
+							href={`#${project.title.toLowerCase().replace(' ', '_')}`}
+							key={project.title}
+							className='shrink-0'
+						>
+							<Button className='p-2 rounded-3xl bg-white border border-zinc-200 text-black hover:brightness-90'>
+								<project.icon className='w-4 h-4 mr-2' />
+								{project.title}
+							</Button>
+						</a>
+					))}
+				</div>
 			</div>
 			{projects.map((project, projectIndex) => (
-				<>
+				<div key={project.title}>
 					<Section
-						className='gap-4 scroll-mt-28'
+						sectionClass='gap-4 scroll-mt-28'
 						id={project.title.toLowerCase().replace(' ', '_')}
-						key={project.title}
 					>
 						<ProjectHeader
 							title={project.title}
 							service={project.service}
 							location={project.location}
 						/>
-						<div className='flex gap-4 flex-wrap'>
+						<div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
 							{Array.from({ length: project.length }).map((_, i) => (
 								<div
-									className='relative w-64 h-80 [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
+									className='relative aspect-[3/4] [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
 									key={i}
 								>
 									<Image
@@ -129,7 +130,7 @@ export default function ImageGallery() {
 						/>
 					</Section>
 					{projectIndex < projects.length - 1 && <Divider />}
-				</>
+				</div>
 			))}
 		</>
 	);

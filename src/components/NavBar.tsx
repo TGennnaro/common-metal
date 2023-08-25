@@ -49,9 +49,11 @@ function NavItem({ item, selected }: { item: NavItem; selected: boolean }) {
 						{item.subItems?.map((subItem, i) => (
 							<li
 								key={i}
-								className='text-sm hover:bg-zinc-200 p-2 rounded-md cursor-pointer transition-colors'
+								className='text-sm hover:bg-zinc-200 rounded-md cursor-pointer transition-colors'
 							>
-								<a href={subItem.href}>{subItem.label}</a>
+								<a href={subItem.href} className='p-2 block'>
+									{subItem.label}
+								</a>
 							</li>
 						))}
 					</ul>

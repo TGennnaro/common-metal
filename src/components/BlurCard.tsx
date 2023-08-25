@@ -1,21 +1,26 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 export default function BlurCard({
 	image,
 	title,
 	description,
-	size = 300,
+	className = '',
+	href,
 }: {
 	image: string;
 	title: string;
 	description?: string;
-	size?: number;
+	className?: string;
+	href?: string;
 }) {
 	return (
-		<div className='relative overflow-hidden rounded-md shadow-md'>
+		<a className='relative overflow-hidden rounded-md shadow-md' href={href}>
 			<div
-				className='hover:blur-sm aspect-square [transition:_300ms_filter_linear] ease-out [&:hover>img]:scale-110 [&:hover+div]:opacity-100 [&:hover~[data-hideaway-title]]:translate-y-full'
-				style={{ width: `${size}px` }}
+				className={cn(
+					'hover:blur-sm aspect-square [transition:_300ms_filter_linear] ease-out [&:hover>img]:scale-110 [&:hover+div]:opacity-100 [&:hover~[data-hideaway-title]]:translate-y-full',
+					className
+				)}
 			>
 				<Image
 					src={image}
@@ -39,6 +44,6 @@ export default function BlurCard({
 					{title}
 				</span>
 			</div>
-		</div>
+		</a>
 	);
 }

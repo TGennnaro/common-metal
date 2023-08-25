@@ -12,6 +12,6 @@
 }
 
 body {
-	color: rgb(var(--foreground-rgb));
+	@apply text-zinc-900;
 	background: rgb(var(--background-rgb));
 }

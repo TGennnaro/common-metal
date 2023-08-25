@@ -1,5 +1,9 @@
 import HeaderImage from '@/components/HeaderImage';
 import ImageGallery from './ImageGallery';
+import { Metadata } from 'next';
+import { getMetadata } from '@/lib/utils';
+
+export const metadata: Metadata = getMetadata('Project Showcase');
 
 export default function Page() {
 	return (

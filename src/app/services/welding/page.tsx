@@ -3,9 +3,13 @@ import Divider from '@/components/Divider';
 import HeaderImage from '@/components/HeaderImage';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
+import { getMetadata } from '@/lib/utils';
+import { Metadata } from 'next';
 
 // More pizzazz
 // Pictures, a bit more animation
+
+export const metadata: Metadata = getMetadata('Welding Capabilities');
 
 export default function Page() {
 	return (
@@ -28,7 +32,7 @@ export default function Page() {
 				/>
 			</Section>
 			<Divider />
-			<Section className='max-w-screen-lg mx-auto'>
+			<Section>
 				<Hero
 					title='Welds We Offer'
 					description='We offer specialty welding for stainless steel and aluminum.'

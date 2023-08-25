@@ -1,12 +1,15 @@
-import Button from '@/components/Button';
 import HeaderImage from '@/components/HeaderImage';
 import Section from '@/components/Section';
+import { getMetadata } from '@/lib/utils';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 // Reformat
 // Add potential video of Suzzanne as intro
 // More pictures, information about company
 // Less paragraph-style content
+
+export const metadata: Metadata = getMetadata('About Us');
 
 export default function Page() {
 	return (

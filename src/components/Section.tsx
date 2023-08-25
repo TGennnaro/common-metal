@@ -1,26 +1,36 @@
 import { cn } from '@/lib/utils';
 import { ReactNode, forwardRef } from 'react';
+import { cva, type VariantProps } from 'cva';
 
-interface SectionProps {
-	children: ReactNode;
+const sectionVariants = cva(
+	'flex flex-col gap-8 py-24 px-8 max-w-screen-xl mx-auto',
+	{
+		variants: {
+			variant: {
+				default: 'bg-white text-zinc-900',
+				primary:
+					'bg-gradient bg-gradient-to-t from-red-600 to-red-400 text-zinc-50 rounded-2xl',
+			},
+		},
+		defaultVariants: {
+			variant: 'default',
+		},
+	}
+);
+
+interface SectionProps
+	extends React.HTMLAttributes<HTMLElement>,
+		VariantProps<typeof sectionVariants> {
 	sectionClass?: string;
-	className?: string;
-	id?: string;
 }
 
 const Section = forwardRef<HTMLElement, SectionProps>(
-	({ children, className = '', ...props }, ref) => {
+	({ children, className = '', sectionClass = '', variant, ...props }, ref) => {
 		return (
-			<section
-				ref={ref}
-				id={props.id}
-				className={cn(
-					'flex flex-col gap-8 py-16 px-8 max-w-screen-xl mx-auto',
-					className
-				)}
-				{...props}
-			>
-				{children}
+			<section ref={ref} id={props.id} className={sectionClass} {...props}>
+				<div className={sectionVariants({ variant, className })}>
+					{children}
+				</div>
 			</section>
 		);
 	}
