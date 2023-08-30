@@ -232,7 +232,7 @@ export default function Page() {
 						three major metal warehouses and was purchasing agent for a company
 						that purchased metal products. So, when she began Commonwealth
 						Metal, Ms. Stilwell already had some insight into the business. Some
-						of her company's customers include the Port Authority Transit
+						of her company&apos;s customers include the Port Authority Transit
 						Company, Huntingdon Valley Country Club, SEPTA, PennDOT, NJ Transit,
 						Strick Corporation, and the Heinz Corporation. Commonwealth Metal is
 						located in the Philadelphia area, it provides metals and service to
@@ -251,32 +251,33 @@ export default function Page() {
 						Policy & Government Affairs Chair. She is a Board member of the
 						Greater Philadelphia Chamber of Commerce and Past President of the
 						National Association of Women Construction (NAWIC), Valley
-						Forge/Philadelphia Chapter. Ms. Stilwell's success has not gone
+						Forge/Philadelphia Chapter. Ms. Stilwell&apos;s success has not gone
 						unnoticed. She was recognized in the June edition of the Small
-						Business News for being one of the area's Top Twenty Women in
+						Business News for being one of the area&apos;s Top Twenty Women in
 						non-traditional businesses, and also received an award from NAWBO
 						for that distinction. She has also been featured several times in
 						the Small Business News of Philadelphia, and in the Business Section
 						of the Philadelphia Daily News. In addition, SEPTA invited Ms.
 						Stilwell to address a group at one of its small business programs
-						about "how to do business with their agency", and also on the topic
-						of doing business as a small business person.
+						about &quot;how to do business with their agency&quot;, and also on
+						the topic of doing business as a small business person.
 					</p>
 					<p className='mt-6'>
-						In 1997, after attending one of DRPA's workshops, Commonwealth Metal
-						won a job at the DRPA. She says she regularly attends seminars and
-						workshops not only to gain knowledge about "how to" do business with
-						a potential customer, but also to meet other businesses, and build
-						potential business contacts. Her feeling is, "If the customer cares
-						enough to have a seminar, and invite Commonwealth Metal Company,
-						then she should be there". Ms. Stilwell feels strongly that one
-						should treat their customer the way he or she would like to be
-						treated. She adds, "never underestimate the customer's knowledge of
-						your products". She tells her business owners that being certified
-						as a MBE or WBE is important, and it is a business decision, but not
-						the answer to everything. She adds, business owners still have to
-						know their products, know their industry, and be able to develop
-						other customers in order to grow.
+						In 1997, after attending one of DRPA&apos;s workshops, Commonwealth
+						Metal won a job at the DRPA. She says she regularly attends seminars
+						and workshops not only to gain knowledge about &quot;how to&quot; do
+						business with a potential customer, but also to meet other
+						businesses, and build potential business contacts. Her feeling is,
+						&quot;If the customer cares enough to have a seminar, and invite
+						Commonwealth Metal Company, then she should be there&quot;. Ms.
+						Stilwell feels strongly that one should treat their customer the way
+						he or she would like to be treated. She adds, &quot;never
+						underestimate the customer&apos;s knowledge of your products&quot;.
+						She tells her business owners that being certified as a MBE or WBE
+						is important, and it is a business decision, but not the answer to
+						everything. She adds, business owners still have to know their
+						products, know their industry, and be able to develop other
+						customers in order to grow.
 					</p>
 				</div>
 			</Section>

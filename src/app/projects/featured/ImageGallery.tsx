@@ -99,7 +99,7 @@ function Testimonial({ quote, title, name, company }: Testimonial) {
 			</div>
 			<div className='flex flex-col w-1/2 mx-auto'>
 				<blockquote className='text-lg font-semibold leading-8 mb-8'>
-					"{quote}"
+					&quot;{quote}&quot;
 				</blockquote>
 				<div className='flex flex-col'>
 					<span className='font-semibold'>{name}</span>
