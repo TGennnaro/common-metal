@@ -88,8 +88,8 @@ function ProjectHeader({
 
 function Testimonial({ quote, title, name, company }: Testimonial) {
 	return (
-		<div className='flex mt-16'>
-			<div className='relative w-[300px] h-[150px] ml-auto my-auto'>
+		<div className='flex flex-col-reverse lg:flex-row lg:w-full lg:justify-center lg:gap-16 mx-auto mt-16'>
+			<div className='relative w-[300px] h-[150px] mt-8'>
 				<Image
 					src='/clients/richard_burns_recycling.jpg'
 					alt='burns_recycling'
@@ -97,7 +97,7 @@ function Testimonial({ quote, title, name, company }: Testimonial) {
 					className='object-contain'
 				/>
 			</div>
-			<div className='flex flex-col w-1/2 mx-auto'>
+			<div className='w-full lg:w-1/2'>
 				<blockquote className='text-lg font-semibold leading-8 mb-8'>
 					&quot;{quote}&quot;
 				</blockquote>
