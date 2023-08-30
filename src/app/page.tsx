@@ -1,10 +1,12 @@
 import BlurCard from '@/components/BlurCard';
+import Button from '@/components/Button';
 import Gallery from '@/components/Gallery';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
 import Section from '@/components/Section';
 import ServiceItem from '@/components/ServiceItem';
 import { getMetadata } from '@/lib/utils';
+import { ChevronRight } from 'lucide-react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -38,13 +40,20 @@ export default function Home() {
 					/>
 				</div>
 			</Section>
-			<Section className='relative z-[1] mt-32 before:absolute before:inset-0 before:bottom-1/3 before:rounded-xl before:bg-gradient-to-t before:from-red-700 before:to-red-500 before:-z-[1]'>
-				<Hero
-					pretext='see our work'
-					title='Featured projects'
-					variant='primary'
-				/>
-				<div className='grid grid-cols-3 mt-8 gap-x-8'>
+			<Section className='relative z-[1] mt-32 before:absolute before:top-0 before:bottom-1/3 before:left-8 before:right-8 2xl:before:left-0 2xl:before:right-0 before:rounded-xl before:bg-gradient-to-t before:from-burgandy-700 before:to-burgandy-500 before:-z-[1]'>
+				<div className='flex flex-col items-center gap-8'>
+					<Hero
+						pretext='see our work'
+						title='Featured projects'
+						variant='primary'
+					/>
+					<a href='/projects/featured'>
+						<Button variant='white'>
+							See more <ChevronRight className='w-4 h-4 ml-2' />
+						</Button>
+					</a>
+				</div>
+				<div className='grid grid-cols-3 mt-8 gap-x-8 px-8 2xl:px-8'>
 					<BlurCard
 						image='/projects/wawa_station/wawa-1.jpg'
 						title='SEPTA Wawa Station'
@@ -58,6 +67,13 @@ export default function Home() {
 						description='Fabricated and installed the railings for the station.'
 						className='aspect-[3/4]'
 						href='/projects#septa_secane%20station'
+					/>
+					<BlurCard
+						image='/projects/unknown_railings/unknown-2.jpg'
+						title='Unknown Railings'
+						description='Fabricated and installed the railings.'
+						className='aspect-[3/4]'
+						href='/projects#unknown_railings'
 					/>
 				</div>
 			</Section>
