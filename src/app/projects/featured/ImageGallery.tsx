@@ -8,11 +8,21 @@ import Section from '@/components/Section';
 import { useState } from 'react';
 import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
-import { Building, MapPin } from 'lucide-react';
+import { Building, LucideIcon, MapPin, Recycle } from 'lucide-react';
 import { Captions } from 'yet-another-react-lightbox/plugins';
 import Button from '@/components/Button';
 
-const projects = [
+interface Project {
+	title: string;
+	service: string;
+	location: string;
+	folder: string;
+	length: number;
+	icon: LucideIcon;
+	testimonial?: Testimonial;
+}
+
+const projects: Project[] = [
 	{
 		title: 'SEPTA Wawa Station',
 		service: 'railing installation',
@@ -30,14 +40,28 @@ const projects = [
 		icon: MapPin,
 	},
 	{
-		title: 'Unknown Railings',
-		service: 'railing fabrication',
+		title: 'Tommy Carts',
+		service: 'cart fabrication',
 		location: 'Unknown location',
-		folder: '/projects/unknown_railings/unknown-%d.jpg',
-		length: 9,
-		icon: Building,
+		folder: '/projects/tommy_cart/tommy-%d.png',
+		length: 4,
+		icon: Recycle,
+		testimonial: {
+			quote:
+				"Suzzanne Stilwell and her team at Commonwealth surpassed our expectations! Our 'Tommy Cart' was superbly crafted and proved a perfect fit in our inventory sorting process. To future clients of Commonwealth Metal, I give the firm my strongest recommendation! Know that my company is certain to use Commonwealth Metal in the future for all of our metal fabrication needs!",
+			name: 'Richard Burns',
+			title: 'Founder and CEO',
+			company: 'Burns Recycling',
+		},
 	},
 ];
+
+interface Testimonial {
+	quote: string;
+	name: string;
+	title: string;
+	company: string;
+}
 
 function ProjectHeader({
 	title,
@@ -50,7 +74,7 @@ function ProjectHeader({
 }) {
 	return (
 		<div className='flex flex-col mb-8'>
-			<span className='uppercase text-red-600 font-bold text-bold'>
+			<span className='uppercase text-burgandy-400 font-bold text-bold'>
 				{service}
 			</span>
 			<h1 className='text-4xl font-semibold mb-2'>{title}</h1>
@@ -62,12 +86,38 @@ function ProjectHeader({
 	);
 }
 
+function Testimonial({ quote, title, name, company }: Testimonial) {
+	return (
+		<div className='flex mt-16'>
+			<div className='relative w-[300px] h-[150px] ml-auto my-auto'>
+				<Image
+					src='/clients/richard_burns_recycling.jpg'
+					alt='burns_recycling'
+					fill={true}
+					className='object-contain'
+				/>
+			</div>
+			<div className='flex flex-col w-1/2 mx-auto'>
+				<blockquote className='text-lg font-semibold leading-8 mb-8'>
+					&quot;{quote}&quot;
+				</blockquote>
+				<div className='flex flex-col'>
+					<span className='font-semibold'>{name}</span>
+					<span className='text-zinc-600'>
+						{title} of {company}
+					</span>
+				</div>
+			</div>
+		</div>
+	);
+}
+
 export default function ImageGallery() {
 	const [index, setIndex] = useState(-1);
 	const [page, setPage] = useState(-1);
 	return (
 		<>
-			<div className='sticky top-20 bg-white/40 backdrop-blur-lg z-10 border-y border-zinc-200'>
+			<div className='sticky top-20 bg-white z-10 border-y border-zinc-200 shadow-md'>
 				<div className='flex gap-4 p-4 overflow-x-auto max-w-screen-xl mx-auto w-full'>
 					{projects.map((project, i) => (
 						<a
@@ -75,7 +125,7 @@ export default function ImageGallery() {
 							key={project.title}
 							className='shrink-0'
 						>
-							<Button className='p-2 rounded-3xl bg-white border border-zinc-200 text-black hover:brightness-90'>
+							<Button variant='outline'>
 								<project.icon className='w-4 h-4 mr-2' />
 								{project.title}
 							</Button>
@@ -114,6 +164,7 @@ export default function ImageGallery() {
 								</div>
 							))}
 						</div>
+						{project.testimonial && <Testimonial {...project.testimonial} />}
 						<Lightbox
 							plugins={[Captions]}
 							slides={Array.from({ length: project.length }).map((_, i) => ({

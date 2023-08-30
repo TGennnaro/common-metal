@@ -22,19 +22,15 @@ export default function Page() {
 			/>
 			<Section>
 				<Hero
-					title={
-						<span>
-							Your <span className='text-red-600'>Top Pick</span> For Quality
-							Welding
-						</span>
-					}
+					pretext='only the best'
+					title='Your top pick for quality welding'
 					description='Commonwealth Metal is one of the finest welding companies in the tri-state area. We offer multiple types of welding by certified, expert professional welders with over thirty years experience. We take on many different types of projects, both large and small.'
 				/>
 			</Section>
-			<Divider />
 			<Section>
 				<Hero
-					title='Welds We Offer'
+					pretext='what we offer'
+					title='Welds for any project'
 					description='We offer specialty welding for stainless steel and aluminum.'
 				/>
 				<div className='mt-4'>
@@ -62,9 +58,8 @@ export default function Page() {
 					</span>
 				</div>
 			</Section>
-			<Divider />
 			<Section className='items-center'>
-				<Hero title='Have a question about what we offer? Ask us!' />
+				<Hero pretext='get in touch' title='Unsure about what we offer?' />
 				<ContactButton />
 			</Section>
 		</main>

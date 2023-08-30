@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { ChevronDown, Menu, Phone } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import Logo from './Logo';
+import { useEffect, useState } from 'react';
 import Button from './Button';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import Logo from './Logo';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card';
 
 interface NavItem {
@@ -25,15 +25,22 @@ const navItems = [
 			{ label: 'Welding Capabilities', href: '/services/welding' },
 		],
 	},
-	{ label: 'Projects', href: '/projects' },
+	{
+		label: 'Projects',
+		href: '/projects',
+		subItems: [
+			{ label: 'Featured Projects', href: '/projects/featured' },
+			{ label: 'Gallery', href: '/projects/gallery' },
+		],
+	},
 	{ label: 'Contact', href: '/contact' },
 ];
 
 function NavItem({ item, selected }: { item: NavItem; selected: boolean }) {
-	const linkClassName = `w-fit flex items-center font-semibold cursor-pointer py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-red-600 hover:before:opacity-100 before:pointer-events-none ${
+	const linkClassName = `w-fit flex items-center font-semibold cursor-pointer py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-burgandy-400 hover:before:opacity-100 before:pointer-events-none ${
 		selected
-			? 'before:opacity-100 text-red-600'
-			: 'before:opacity-0 hover:text-red-600'
+			? 'before:opacity-100 text-burgandy-400'
+			: 'before:opacity-0 hover:text-burgandy-400'
 	}`;
 	if (item.subItems) {
 		return (
@@ -90,7 +97,7 @@ export default function NavBar() {
 			<div className='max-w-screen-xl mx-auto p-4 flex justify-between items-center'>
 				<Logo />
 				<ul
-					className={`gap-4 font-medium absolute top-full left-0 -z-[999] md:z-0 p-4 bg-white border-t border-zinc-200 md:border-none w-full flex flex-col md:gap-8 md:p-0 md:static md:flex-row md:w-auto shadow-lg md:shadow-none transition-all md:opacity-100 md:translate-y-0 duration-300 ${
+					className={`gap-4 font-medium absolute top-full left-0 -z-[999] lg:z-0 p-4 bg-white border-t border-zinc-200 lg:border-none w-full flex flex-col lg:gap-8 lg:p-0 lg:static lg:flex-row lg:w-auto shadow-lg lg:shadow-none transition-all lg:opacity-100 lg:translate-y-0 duration-300 ${
 						navOpen
 							? 'translate-y-0 opacity-100'
 							: '-translate-y-full opacity-0'
@@ -106,9 +113,25 @@ export default function NavBar() {
 							}
 						/>
 					))}
+					<li>
+						<a
+							className='flex items-center text-lg font-medium lg:hidden mt-4 tracking-wide'
+							href='tel:12159380810'
+						>
+							<Phone className='w-6 h-6 mr-3' />
+							+1 215 938-0810
+						</a>
+					</li>
 				</ul>
+				<a
+					className='items-center text-lg font-medium hidden lg:flex tracking-wide'
+					href='tel:12159380810'
+				>
+					<Phone className='w-6 h-6 mr-3' />
+					+1 215 938-0810
+				</a>
 				<Button
-					className='bg-white border border-zinc-200 text-zinc-800 block md:hidden'
+					className='bg-white border border-zinc-200 text-zinc-800 block lg:hidden'
 					onClick={() => setNavOpen(!navOpen)}
 				>
 					<Menu />

@@ -71,7 +71,7 @@ export default function Gallery() {
 					},
 				}}
 				autoplay={true}
-				autoplayDelay={5000}
+				autoplayDelay={10000}
 			>
 				<GalleryItem
 					image={`/steel1.jpg`}

@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import { VariantProps, cva } from 'cva';
 import { ReactNode } from 'react';
 import Balancer from 'react-wrap-balancer';
@@ -5,8 +6,8 @@ import Balancer from 'react-wrap-balancer';
 const heroPretextVariants = cva('uppercase font-bold text-base leading-7', {
 	variants: {
 		variant: {
-			default: 'text-red-600',
-			primary: 'text-red-200',
+			default: 'text-burgandy-400',
+			primary: 'text-burgandy-200',
 		},
 	},
 	defaultVariants: {
@@ -32,16 +33,18 @@ interface HeroProps
 	pretext?: string;
 	title: ReactNode;
 	description?: string;
+	className?: string;
 }
 
 export default function Hero({
 	pretext,
 	title,
 	description,
+	className = '',
 	variant,
 }: HeroProps) {
 	return (
-		<div className='text-center max-w-3xl mx-auto'>
+		<div className={cn('text-center max-w-3xl mx-auto', className)}>
 			{pretext && (
 				<span className={heroPretextVariants({ variant })}>{pretext}</span>
 			)}

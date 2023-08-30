@@ -30,11 +30,29 @@ export default function Page() {
 				imageClass='object-center'
 			/>
 			<Section>
-				<Hero title='Learn About The Products We Sell' />
+				<Hero
+					pretext='affordable products'
+					title='Learn about our products'
+					description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, expedita reprehenderit, earum assumenda quis commodi quia similique rerum possimus perspiciatis, modi delectus voluptates provident odio natus nulla esse debitis obcaecati?'
+				/>
 			</Section>
 			<Divider />
 			<Section>
 				<div className='flex justify-between'>
+					<div className='w-1/2 flex flex-col text-justify'>
+						<Hero
+							pretext='top-notch'
+							title='Steel Bars'
+							className='text-left m-0'
+						/>
+						<p className='leading-8 text-lg text-zinc-600 mt-6'>
+							We are a trusted source for top-notch steel bars. With a focus on
+							delivering reliability and performance, we proudly offer an
+							extensive selection available in both hot rolled and bar shapes.
+							Our commitment to exceptional quality ensures that each steel bar,
+							regardless of form, meets the highest industry standards.
+						</p>
+					</div>
 					<div className='flex justify-center bg-zinc-100 p-8 rounded-lg shadow-xl'>
 						<div className='w-80 aspect-square relative'>
 							<Image
@@ -45,23 +63,17 @@ export default function Page() {
 							/>
 						</div>
 					</div>
-					<div className='w-1/2 flex flex-col text-justify'>
-						<h2 className='text-4xl font-semibold mb-4'>Steel Bars</h2>
-						<p className='leading-relaxed text-xl text-zinc-600'>
-							We are a trusted source for top-notch steel bars. With a focus on
-							delivering reliability and performance, we proudly offer an
-							extensive selection available in both hot rolled and bar shapes.
-							Our commitment to exceptional quality ensures that each steel bar,
-							regardless of form, meets the highest industry standards.
-						</p>
-					</div>
 				</div>
 			</Section>
 			<Section sectionClass='bg-zinc-50 border-y border-zinc-200'>
 				<div className='flex justify-between max-w-screen-xl mx-auto'>
 					<div className='w-1/2 flex flex-col text-justify'>
-						<h2 className='text-4xl font-semibold mb-4'>Plates and Sheets</h2>
-						<p className='leading-relaxed text-xl text-zinc-600'>
+						<Hero
+							pretext='robust'
+							title='Steel Plates and Sheets'
+							className='text-left m-0'
+						/>
+						<p className='leading-8 text-lg text-zinc-600 mt-6'>
 							We specialize in top-grade steel plates and sheets, available in
 							all grades. Whether you seek the robustness of steel plates or the
 							flexibility of sheets, we deliver products that consistently meet
@@ -84,10 +96,12 @@ export default function Page() {
 			</Section>
 			<Section>
 				<div>
-					<h2 className='text-4xl font-semibold mb-4'>Structural Steel</h2>
-					<p className='leading-relaxed text-xl text-zinc-600'>
-						We provide a variety of structural steel options:
-					</p>
+					<Hero
+						pretext='Any variety'
+						title='Structural Steel'
+						description='We provide a variety of structural steel options.'
+						className='text-left m-0'
+					/>
 					<ul className='text-xl text-zinc-600 leading-loose mt-8 flex gap-4 flex-wrap'>
 						<ImageItem image='/services/angled_steel.jpg' text='Angled' />
 						<ImageItem image='/services/raw_materials.jpg' text='Beams' />
@@ -103,7 +117,7 @@ export default function Page() {
 			</Section>
 			<Divider />
 			<Section className='items-center'>
-				<Hero title='Interested In a Purchase?' />
+				<Hero pretext='let us know' title='Interested in a purchase?' />
 				<ContactButton />
 			</Section>
 		</main>
