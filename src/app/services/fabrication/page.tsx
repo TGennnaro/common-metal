@@ -21,11 +21,8 @@ export default function Page() {
 			/>
 			<Section>
 				<Hero
-					title={
-						<span>
-							<span className='text-red-600'>Expertise</span> For Any Enterprise
-						</span>
-					}
+					pretext='Specialized expertise'
+					title='Expertise for any enterprise'
 					description='Elevate your enterprise with specialized expertise in fabrication and processing, offering tailored solutions crafted for diverse industries and their unique needs.'
 				/>
 				<ul className='flex gap-8 justify-center flex-wrap'>
@@ -49,16 +46,11 @@ export default function Page() {
 					/>
 				</ul>
 			</Section>
-			<Divider />
 			<Section>
 				<Hero
-					title={
-						<span>
-							Your <span className='text-red-600'>One-Stop-Shop</span> For All
-							Things Metal
-						</span>
-					}
-					description='Cutting - grinding - galvanizing - burning - shearing - we do it all! Our specialty services are sure to impress.'
+					pretext='one-stop-shop'
+					title='The all-in-one solution'
+					description='We do it all! Our specialty services are sure to impress.'
 				/>
 				<div className='flex flex-col gap-2 items-center'>
 					<ListCard image='/abilities/cutting-metal.jpg' title='Cutting' />
@@ -73,7 +65,7 @@ export default function Page() {
 			</Section>
 			<Divider />
 			<Section className='items-center'>
-				<Hero title={<span>Need something not listed? Let us know!</span>} />
+				<Hero pretext='contact us' title='Ask us about our services' />
 				<ContactButton />
 			</Section>
 		</main>
