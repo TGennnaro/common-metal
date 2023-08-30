@@ -1,15 +1,57 @@
 import HeaderImage from '@/components/HeaderImage';
+import Hero from '@/components/Hero';
 import Section from '@/components/Section';
 import { getMetadata } from '@/lib/utils';
+import {
+	Check,
+	Construction,
+	HardHat,
+	Hash,
+	LucideIcon,
+	ScrollText,
+	Warehouse,
+} from 'lucide-react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
 // Reformat
 // Add potential video of Suzzanne as intro
 // More pictures, information about company
-// Less paragraph-style content
 
 export const metadata: Metadata = getMetadata('About Us');
+
+function ListItem({
+	Icon = Check,
+	children,
+}: {
+	Icon?: LucideIcon;
+	children: React.ReactNode;
+}) {
+	return (
+		<li className='flex items-center text-lg font-medium'>
+			<Icon className='w-6 h-6 mr-4 bg-burgandy-500 text-white rounded-full p-1' />
+			{children}
+		</li>
+	);
+}
+
+function ListCard({
+	Icon,
+	title,
+	children,
+}: {
+	Icon: LucideIcon;
+	title: string;
+	children: React.ReactNode;
+}) {
+	return (
+		<div className='flex flex-col max-w-md'>
+			<Icon className='w-10 h-10 bg-burgandy-500 text-white rounded-lg p-2 mb-6' />
+			<h3 className='leading-7 font-semibold'>{title}</h3>
+			<p className='leading-7 text-zinc-600 mt-1'>{children}</p>
+		</div>
+	);
+}
 
 export default function Page() {
 	return (
@@ -20,7 +62,225 @@ export default function Page() {
 				title='About Us'
 			/>
 			<Section>
-				<div className='columns-3 gap-x-8 [&>p]:indent-8 [&>p]:text-justify leading-relaxed'>
+				<Hero pretext='around since 1988' title='Where it all started' />
+				<div className='text-justify leading-8 text-lg indent-8'>
+					<p className='mt-6'>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ipsum
+						suscipit, tenetur soluta ullam, eveniet laudantium minima mollitia
+						incidunt necessitatibus quam molestias aspernatur sunt corrupti
+						quidem illum aut quia eaque voluptate vitae? Aperiam accusantium
+						blanditiis expedita nemo, unde error ut reprehenderit autem,
+						delectus quaerat suscipit. Reprehenderit numquam in eius harum!
+					</p>
+					<p className='mt-6'>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ipsum
+						suscipit, tenetur soluta ullam, eveniet laudantium minima mollitia
+						incidunt necessitatibus quam molestias aspernatur sunt corrupti
+						quidem illum aut quia eaque voluptate vitae? Aperiam accusantium
+						blanditiis expedita nemo, unde error ut reprehenderit autem,
+						delectus quaerat suscipit. Reprehenderit numquam in eius harum!
+					</p>
+				</div>
+				<div className='flex gap-16 justify-center mt-8'>
+					<Image
+						src='/about-us/old-image-1.jpg'
+						alt='historic_image_1'
+						width={300}
+						height={200}
+						className='aspect-[3/2] object-cover rounded-md shadow-md'
+					/>
+					<Image
+						src='/about-us/old-image-2.jpg'
+						alt='historic_image_2'
+						width={300}
+						height={200}
+						className='aspect-[3/2] object-cover rounded-md shadow-md'
+					/>
+					<Image
+						src='/about-us/old-image-3.jpg'
+						alt='historic_image_3'
+						width={300}
+						height={200}
+						className='aspect-[3/2] object-cover rounded-md shadow-md'
+					/>
+				</div>
+			</Section>
+			<Section>
+				<Hero pretext='your trusted experts' title='Meet the team' />
+				<div className='flex justify-center gap-16 mt-8'>
+					<div className='text-center w-fit'>
+						<Image
+							src='/team/suzzanne.jpg'
+							alt='suzzanne_stillwell'
+							width={200}
+							height={200}
+							className='object-cover h-[200px] rounded-full object-top'
+						/>
+						<h3 className='mt-6 tracking-tight leading-7 font-semibold'>
+							Suzzanne Stilwell
+						</h3>
+						<span className='leading-6 text-sm text-zinc-600'>Owner</span>
+					</div>
+					<div className='text-center w-fit'>
+						<Image
+							src='/team/mark.jpg'
+							alt='mark_kissling'
+							width={200}
+							height={200}
+							className='object-cover h-[200px] rounded-full object-top'
+						/>
+						<h3 className='mt-6 tracking-tight leading-7 font-semibold'>
+							Mark Kissling
+						</h3>
+						<span className='leading-6 text-sm text-zinc-600'>
+							Head of Marketing
+						</span>
+					</div>
+					<div className='text-center w-fit'>
+						<Image
+							src='/team/sally.jpg'
+							alt='sally_johnson'
+							width={200}
+							height={200}
+							className='object-cover h-[200px] rounded-full object-right-top'
+						/>
+						<h3 className='mt-6 tracking-tight leading-7 font-semibold'>
+							Sally Johnson
+						</h3>
+						<span className='leading-6 text-sm text-zinc-600'>
+							Senior Saleswoman
+						</span>
+					</div>
+				</div>
+			</Section>
+			<Section>
+				<Hero
+					pretext='unique service'
+					title='Capability statement'
+					className='mb-8'
+				/>
+				<div className='mx-auto mb-16'>
+					<ul className='grid grid-cols-2 gap-8'>
+						<ListCard Icon={HardHat} title='Superior construction management'>
+							Streamline your project with our expert management, delivering
+							timely completion and exceptional results by optimizing resources
+							and communication.
+						</ListCard>
+						<ListCard Icon={Construction} title='Focus on quality and safety'>
+							Prioritize safety and satisfaction with our meticulous adherence
+							to quality standards and stringent safety protocols.
+						</ListCard>
+						<ListCard Icon={Warehouse} title='Perform all work in-house'>
+							Experience integrated control as our in-house experts collaborate
+							seamlessly, ensuring consistent quality and reducing project
+							risks.
+						</ListCard>
+						<ListCard
+							Icon={ScrollText}
+							title='Ethical and honest business practices'
+						>
+							Trust in our transparent and ethical approach, forging a
+							dependable partnership built on integrity and open communication.
+						</ListCard>
+					</ul>
+				</div>
+				<div className='flex justify-center flex-wrap gap-8'>
+					<div className='p-8 w-fit'>
+						<h3 className='text-2xl font-semibold mb-8'>Core Competencies</h3>
+						<ul className='flex flex-col gap-4'>
+							<ListItem>Asphalt</ListItem>
+							<ListItem>Concrete</ListItem>
+							<ListItem>Site Preparation and excavation</ListItem>
+							<ListItem>Site demolition and clearing</ListItem>
+							<ListItem>Underground utilities</ListItem>
+							<ListItem>Trucking and hauling</ListItem>
+						</ul>
+					</div>
+					<div className='p-8 w-fit'>
+						<h3 className='text-2xl font-semibold mb-8'>NAICS Codes</h3>
+						<ul className='flex flex-col gap-4'>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+						</ul>
+					</div>
+				</div>
+			</Section>
+			<Section>
+				<Hero
+					pretext='published article'
+					title='"Spotlight"'
+					description='by Matthew Donelson, 1998'
+				/>
+				<div className='text-justify leading-8 text-lg indent-8 w-3/4 mx-auto'>
+					<p className='mt-6'>
+						Suzzanne Stilwell is the owner and president of Commonwealth Metal
+						Company, a 100% female-owned company. The company has been in
+						business since 1988. Commonwealth Metal is a warehouse distribution
+						company, providing all types of metal including structural carbon
+						steel, stainless steel, aluminum, copper, and brass. Commonwealth
+						Metal stocks different types of metal products, distributes
+						innovative and long-lasting, abrasive stair products, which can be
+						used in-and-outdoors. Commonwealth Metal also cuts to size and does
+						specialty fabrication. Ms. Stilwell has an extensive background in
+						metal industry. Prior to founding Commonwealth Metal, she worked for
+						three major metal warehouses and was purchasing agent for a company
+						that purchased metal products. So, when she began Commonwealth
+						Metal, Ms. Stilwell already had some insight into the business. Some
+						of her company's customers include the Port Authority Transit
+						Company, Huntingdon Valley Country Club, SEPTA, PennDOT, NJ Transit,
+						Strick Corporation, and the Heinz Corporation. Commonwealth Metal is
+						located in the Philadelphia area, it provides metals and service to
+						businesses within a 50 mile radius. Commonwealth Metal has even done
+						business in the Scranton area. Ms. Stilwell has a core of seven
+						people working for her, and has the ability to secure additional
+						qualified individuals if the job requires a bigger team. The welders
+						in her service department have multiple certifications, thereby
+						enabling them to perform many different and highly specialized
+						services within the company.
+					</p>
+					<p className='mt-6'>
+						Ms. Stilwell is a member of the Association of Women in the Metal
+						Industry. She is a board member of the National Association of Women
+						Business Owners, Greater Philadelphia Chapter, and holds the Public
+						Policy & Government Affairs Chair. She is a Board member of the
+						Greater Philadelphia Chamber of Commerce and Past President of the
+						National Association of Women Construction (NAWIC), Valley
+						Forge/Philadelphia Chapter. Ms. Stilwell's success has not gone
+						unnoticed. She was recognized in the June edition of the Small
+						Business News for being one of the area's Top Twenty Women in
+						non-traditional businesses, and also received an award from NAWBO
+						for that distinction. She has also been featured several times in
+						the Small Business News of Philadelphia, and in the Business Section
+						of the Philadelphia Daily News. In addition, SEPTA invited Ms.
+						Stilwell to address a group at one of its small business programs
+						about "how to do business with their agency", and also on the topic
+						of doing business as a small business person.
+					</p>
+					<p className='mt-6'>
+						In 1997, after attending one of DRPA's workshops, Commonwealth Metal
+						won a job at the DRPA. She says she regularly attends seminars and
+						workshops not only to gain knowledge about "how to" do business with
+						a potential customer, but also to meet other businesses, and build
+						potential business contacts. Her feeling is, "If the customer cares
+						enough to have a seminar, and invite Commonwealth Metal Company,
+						then she should be there". Ms. Stilwell feels strongly that one
+						should treat their customer the way he or she would like to be
+						treated. She adds, "never underestimate the customer's knowledge of
+						your products". She tells her business owners that being certified
+						as a MBE or WBE is important, and it is a business decision, but not
+						the answer to everything. She adds, business owners still have to
+						know their products, know their industry, and be able to develop
+						other customers in order to grow.
+					</p>
+				</div>
+			</Section>
+			{/* <div className='columns-3 gap-x-8 [&>p]:indent-8 [&>p]:text-justify leading-relaxed'>
 					<div className='w-fit mx-auto'>
 						<Image
 							src='/about-us/suzzanne.jpg'
@@ -74,7 +334,7 @@ export default function Page() {
 						every project we touch.
 					</p>
 				</div>
-			</Section>
+			</Section> */}
 		</main>
 	);
 }
