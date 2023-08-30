@@ -3,7 +3,7 @@ import ImageGallery from './ImageGallery';
 import { Metadata } from 'next';
 import { getMetadata } from '@/lib/utils';
 
-export const metadata: Metadata = getMetadata('Project Showcase');
+export const metadata: Metadata = getMetadata('Featured Projects');
 
 export default function Page() {
 	return (
@@ -11,7 +11,7 @@ export default function Page() {
 			<HeaderImage
 				image='/projects/cit_bank_park.jpg'
 				alt='citizens bank park'
-				title='Project Showcase'
+				title='Featured Projects'
 				imageClass='object-bottom'
 			/>
 			<ImageGallery />
