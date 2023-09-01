@@ -17,7 +17,7 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				burgandy: {
+				burgundy: {
 					100: '#e6ccd2',
 					200: '#cc99a6',
 					300: '#b36679',
