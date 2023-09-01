@@ -75,8 +75,8 @@ export default function Gallery() {
 			>
 				<GalleryItem
 					image={`/steel1.jpg`}
-					header='Commonwealth Metal Company'
-					description='The finest metal work in Huntingdon Valley, PA'
+					header='COMMONWEALTH METAL COMPANY'
+					description='For over thirty years, metal fabricating and sales in the Tri-State area'
 				/>
 				<GalleryItem
 					image={`/steel2.jpg`}
