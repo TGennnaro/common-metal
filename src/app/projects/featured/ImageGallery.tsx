@@ -8,7 +8,15 @@ import Section from '@/components/Section';
 import { useState } from 'react';
 import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
-import { Building, LucideIcon, MapPin, Recycle } from 'lucide-react';
+import {
+	Building,
+	LucideIcon,
+	MapPin,
+	Recycle,
+	School,
+	Train,
+	TreeDeciduous,
+} from 'lucide-react';
 import { Captions } from 'yet-another-react-lightbox/plugins';
 import Button from '@/components/Button';
 
@@ -29,20 +37,20 @@ const projects: Project[] = [
 		location: '1490 West Baltimore Pike, Media, PA 19063',
 		folder: '/projects/wawa_station/wawa-%d.jpg',
 		length: 9,
-		icon: MapPin,
+		icon: Train,
 	},
 	{
 		title: 'SEPTA Secane Station',
 		service: 'railing installation',
-		location: '1297 Providence Road, Clifton Heights, PA 19018',
+		location: '1297 Providence Road, Secane, PA 19018',
 		folder: '/projects/secane_station/secane-%d.jpg',
-		length: 8,
-		icon: MapPin,
+		length: 10,
+		icon: Train,
 	},
 	{
 		title: 'Tommy Carts',
 		service: 'cart fabrication',
-		location: 'Unknown location',
+		location: 'Richard S. Burns & Company Recycling',
 		folder: '/projects/tommy_cart/tommy-%d.png',
 		length: 4,
 		icon: Recycle,
@@ -53,6 +61,22 @@ const projects: Project[] = [
 			title: 'Founder and CEO',
 			company: 'Burns Recycling',
 		},
+	},
+	{
+		title: 'Stadium Safety Rails',
+		service: 'safety rails installation',
+		location: '435 Crossfield Road, King of Prussia, PA 19406',
+		folder: '/projects/hs_bleachers/bleachers-%d.jpg',
+		length: 8,
+		icon: School,
+	},
+	{
+		title: 'Park Benches',
+		service: 'bench fabrication',
+		location: 'Unknown location',
+		folder: '/projects/benches/bench-%d.jpg',
+		length: 5,
+		icon: TreeDeciduous,
 	},
 ];
 
@@ -74,7 +98,7 @@ function ProjectHeader({
 }) {
 	return (
 		<div className='flex flex-col mb-8'>
-			<span className='uppercase text-burgandy-400 font-bold text-bold'>
+			<span className='uppercase text-burgundy-400 font-bold text-bold'>
 				{service}
 			</span>
 			<h1 className='text-4xl font-semibold mb-2'>{title}</h1>
@@ -147,14 +171,14 @@ export default function ImageGallery() {
 						<div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
 							{Array.from({ length: project.length }).map((_, i) => (
 								<div
-									className='relative aspect-[3/4] [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
+									className='relative rounded-md aspect-[3/4] [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
 									key={i}
 								>
 									<Image
 										src={project.folder.replace('%d', `${i + 1}`)}
 										alt={`${project.title}_${i}`}
 										fill={true}
-										className='object-cover rounded-md shadow-md cursor-pointer transition-transform duration-300'
+										className='object-cover shadow-md cursor-pointer transition-transform duration-300'
 										onClick={() => {
 											setIndex(i);
 											setPage(projectIndex);
