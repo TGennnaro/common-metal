@@ -29,7 +29,7 @@ function ListItem({
 }) {
 	return (
 		<li className='flex items-center text-lg font-medium'>
-			<Icon className='w-6 h-6 mr-4 bg-burgandy-500 text-white rounded-full p-1' />
+			<Icon className='w-6 h-6 mr-4 bg-burgundy-500 text-white rounded-full p-1' />
 			{children}
 		</li>
 	);
@@ -46,7 +46,7 @@ function ListCard({
 }) {
 	return (
 		<div className='flex flex-col max-w-md'>
-			<Icon className='w-10 h-10 bg-burgandy-500 text-white rounded-lg p-2 mb-6' />
+			<Icon className='w-10 h-10 bg-burgundy-500 text-white rounded-lg p-2 mb-6' />
 			<h3 className='leading-7 font-semibold'>{title}</h3>
 			<p className='leading-7 text-zinc-600 mt-1'>{children}</p>
 		</div>
@@ -62,23 +62,26 @@ export default function Page() {
 				title='About Us'
 			/>
 			<Section>
-				<Hero pretext='around since 1988' title='Where it all started' />
+				<Hero pretext='established in 1988' title='Where it all started' />
 				<div className='text-justify leading-8 text-lg indent-8'>
 					<p className='mt-6'>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ipsum
-						suscipit, tenetur soluta ullam, eveniet laudantium minima mollitia
-						incidunt necessitatibus quam molestias aspernatur sunt corrupti
-						quidem illum aut quia eaque voluptate vitae? Aperiam accusantium
-						blanditiis expedita nemo, unde error ut reprehenderit autem,
-						delectus quaerat suscipit. Reprehenderit numquam in eius harum!
+						Having worked in the metals industry for several decades, Suzzanne
+						Stilwell had a vision for a metals company that could supply
+						Tri-state area businesses with all of their metal needs at a low
+						price and delivered on-time. She also wanted to create a business
+						that could carry out fabrication economically and efficiently with
+						the very finest in quality. Out of this vision, in 1988, Ms.
+						Stilwell started Commonwealth Metal Company in Huntingdon Valley,
+						Pennsylvania and a remarkable new business opened its doors.
 					</p>
 					<p className='mt-6'>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ipsum
-						suscipit, tenetur soluta ullam, eveniet laudantium minima mollitia
-						incidunt necessitatibus quam molestias aspernatur sunt corrupti
-						quidem illum aut quia eaque voluptate vitae? Aperiam accusantium
-						blanditiis expedita nemo, unde error ut reprehenderit autem,
-						delectus quaerat suscipit. Reprehenderit numquam in eius harum!
+						Now, with over thirty years in business, Commonwealth Metal has
+						grown to become a valued supplier of metal to many businesses, both
+						large and small. Moreover, the company has gained a vast amount of
+						experience in fabricating all manner of metal projects of all sizes.
+						This is because Commonwealth Metal has the most expert fabricating
+						staff with welders that are among the very finest in the metals
+						industry.
 					</p>
 				</div>
 				<div className='flex gap-16 justify-center mt-8'>
@@ -214,11 +217,18 @@ export default function Page() {
 			<Section>
 				<Hero
 					pretext='published article'
-					title='"Spotlight"'
+					title='"Spotlight on the Woman of Steel"'
 					description='by Matthew Donelson, 1998'
 				/>
 				<div className='text-justify leading-8 text-lg indent-8 w-3/4 mx-auto'>
 					<p className='mt-6'>
+						<Image
+							src='/team/suzzanne.jpg'
+							alt='suzzanne_portrait'
+							width={200}
+							height={300}
+							className='float-left mr-8 mb-4 rounded-md shadow-md'
+						/>
 						Suzzanne Stilwell is the owner and president of Commonwealth Metal
 						Company, a 100% female-owned company. The company has been in
 						business since 1988. Commonwealth Metal is a warehouse distribution

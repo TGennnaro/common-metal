@@ -9,7 +9,7 @@ const sectionVariants = cva(
 			variant: {
 				default: 'text-zinc-900',
 				primary:
-					'bg-gradient bg-gradient-to-t from-burgandy-700 to-burgandy-500 text-zinc-50 rounded-2xl',
+					'bg-gradient bg-gradient-to-t from-burgundy-700 to-burgundy-500 text-zinc-50 rounded-2xl',
 			},
 		},
 		defaultVariants: {
