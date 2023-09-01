@@ -56,8 +56,14 @@ export default function Page() {
 					<ListCard image='/abilities/cutting-metal.jpg' title='Cutting' />
 					<ListCard image='/abilities/grinding.jpg' title='Grinding' />
 					<ListCard image='/abilities/galvanizing.jpg' title='Galvanizing' />
-					<ListCard image='/abilities/painting.jpg' title='Prime and Paint' />
-					<ListCard image='/abilities/shearing.jpg' title='Shearing' />
+					<ListCard
+						image='/abilities/painting.jpg'
+						title='Priming & Painting'
+					/>
+					<ListCard
+						image='/abilities/shearing.jpg'
+						title='Punching & Drilling'
+					/>
 				</div>
 				<h2 className='text-center text-xl font-semibold italic'>
 					... and much more!
