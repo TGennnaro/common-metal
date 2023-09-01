@@ -1,14 +1,38 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function ProjectCard({
 	title,
 	image,
+	transitionDelay = 0,
 }: {
 	title: string;
 	image: string;
+	transitionDelay?: number;
 }) {
 	return (
-		<div className='w-36 lg:w-[300px] aspect-square relative rounded-md overflow-hidden shadow-md lg:[&:hover>div]:h-full lg:[&:hover>img]:scale-110'>
+		<motion.div
+			className='w-36 lg:w-[300px] aspect-square relative rounded-md overflow-hidden shadow-md lg:[&:hover>div]:h-full lg:[&:hover>img]:scale-110'
+			initial='hide'
+			whileInView='show'
+			viewport={{ once: true }}
+			variants={{
+				hide: {
+					opacity: 0,
+					y: 60,
+				},
+				show: {
+					opacity: 1,
+					y: 0,
+					transition: {
+						duration: 1,
+						delay: transitionDelay,
+					},
+				},
+			}}
+		>
 			<Image
 				src={image}
 				alt='steel_image'
@@ -20,6 +44,6 @@ export default function ProjectCard({
 					{title}
 				</span>
 			</div>
-		</div>
+		</motion.div>
 	);
 }

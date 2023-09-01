@@ -1,13 +1,16 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { VariantProps, cva } from 'cva';
+import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import Balancer from 'react-wrap-balancer';
 
 const heroPretextVariants = cva('uppercase font-bold text-base leading-7', {
 	variants: {
 		variant: {
-			default: 'text-burgandy-400',
-			primary: 'text-burgandy-200',
+			default: 'text-burgundy-400',
+			primary: 'text-burgundy-200',
 		},
 	},
 	defaultVariants: {
@@ -27,6 +30,20 @@ const heroTitleVariants = cva('text-5xl font-bold tracking-tight mt-2', {
 	},
 });
 
+const heroMotionVariants = {
+	hide: {
+		opacity: 0,
+		y: 60,
+	},
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
 interface HeroProps
 	extends VariantProps<typeof heroPretextVariants>,
 		VariantProps<typeof heroTitleVariants> {
@@ -44,18 +61,25 @@ export default function Hero({
 	variant,
 }: HeroProps) {
 	return (
-		<div className={cn('text-center max-w-3xl mx-auto', className)}>
-			{pretext && (
-				<span className={heroPretextVariants({ variant })}>{pretext}</span>
-			)}
-			<h1 className={heroTitleVariants({ variant })}>
-				<Balancer>{title}</Balancer>
-			</h1>
-			{description && (
-				<span className='leading-8 text-lg text-zinc-600 mt-6 block'>
-					<Balancer>{description}</Balancer>
-				</span>
-			)}
-		</div>
+		<motion.header
+			initial='hide'
+			whileInView='show'
+			viewport={{ once: true }}
+			variants={heroMotionVariants}
+		>
+			<div className={cn('text-center max-w-3xl mx-auto', className)}>
+				{pretext && (
+					<span className={heroPretextVariants({ variant })}>{pretext}</span>
+				)}
+				<h1 className={heroTitleVariants({ variant })}>
+					<Balancer>{title}</Balancer>
+				</h1>
+				{description && (
+					<span className='leading-8 text-lg text-zinc-600 mt-6 block'>
+						<Balancer>{description}</Balancer>
+					</span>
+				)}
+			</div>
+		</motion.header>
 	);
 }

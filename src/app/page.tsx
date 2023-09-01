@@ -8,7 +8,6 @@ import ServiceItem from '@/components/ServiceItem';
 import { getMetadata } from '@/lib/utils';
 import { ChevronRight } from 'lucide-react';
 import { Metadata } from 'next';
-import Image from 'next/image';
 
 export const metadata: Metadata = getMetadata('Home');
 
@@ -27,20 +26,23 @@ export default function Home() {
 						title='Fabrication & Processing'
 						image='/services/fabrication.jpg'
 						href='/services/fabrication'
+						transitionDelay={0.2}
 					/>
 					<ServiceItem
 						title='Supply of Raw Materials'
 						image='/services/raw_materials.jpg'
 						href='/services/supply'
+						transitionDelay={0.4}
 					/>
 					<ServiceItem
 						title='Welding Capabilities'
 						image='/services/welding.jpg'
 						href='/services/welding'
+						transitionDelay={0.6}
 					/>
 				</div>
 			</Section>
-			<Section className='relative z-[1] mt-32 before:absolute before:top-0 before:bottom-1/3 before:left-8 before:right-8 2xl:before:left-0 2xl:before:right-0 before:rounded-xl before:bg-gradient-to-t before:from-burgandy-700 before:to-burgandy-500 before:-z-[1]'>
+			<Section className='relative z-[1] mt-32 before:absolute before:top-0 before:bottom-1/3 before:left-8 before:right-8 2xl:before:left-0 2xl:before:right-0 before:rounded-xl before:bg-gradient-to-t before:from-burgundy-700 before:to-burgundy-500 before:-z-[1]'>
 				<div className='flex flex-col items-center gap-8'>
 					<Hero
 						pretext='see our work'
@@ -85,17 +87,46 @@ export default function Home() {
 					the unique requirements of every project.'
 				/>
 				<div className='w-fit grid grid-cols-2 md:grid-cols-4 gap-8 mx-auto mt-8'>
-					<ProjectCard title='Bridges' image='/projects/bridge.jpg' />
-					<ProjectCard title='Railroads' image='/projects/railroads.jpg' />
-					<ProjectCard title='Grates' image='/projects/grates.webp' />
-					<ProjectCard title='Screens' image='/projects/screens.jpg' />
-					<ProjectCard title='Staircases' image='/projects/stairs.jpg' />
 					<ProjectCard
-						title='Parking Pillars'
+						transitionDelay={0.1}
+						title='Bridges'
+						image='/projects/bridge.jpg'
+					/>
+					<ProjectCard
+						transitionDelay={0.2}
+						title='Railroads'
+						image='/projects/railroads.jpg'
+					/>
+					<ProjectCard
+						transitionDelay={0.3}
+						title='Grates'
+						image='/projects/grates.webp'
+					/>
+					<ProjectCard
+						transitionDelay={0.4}
+						title='Screens'
+						image='/projects/screens.jpg'
+					/>
+					<ProjectCard
+						transitionDelay={0.5}
+						title='Staircases'
+						image='/projects/stairs.jpg'
+					/>
+					<ProjectCard
+						transitionDelay={0.6}
+						title='Bollards'
 						image='/projects/parking_pillars.jpg'
 					/>
-					<ProjectCard title='Railings' image='/projects/railings.jpg' />
-					<ProjectCard title='Elevators' image='/projects/elevators.jpg' />
+					<ProjectCard
+						transitionDelay={0.7}
+						title='Railings'
+						image='/projects/railings.jpg'
+					/>
+					<ProjectCard
+						transitionDelay={0.8}
+						title='Elevators'
+						image='/projects/elevators.jpg'
+					/>
 				</div>
 			</Section>
 		</main>

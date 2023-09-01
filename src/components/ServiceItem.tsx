@@ -1,20 +1,42 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function ServiceItem({
 	image,
 	title,
 	href,
 	textSize = 'text-2xl',
+	transitionDelay = 0,
 }: {
 	image: string;
 	title: string;
 	href?: string;
 	textSize?: string;
+	transitionDelay?: number;
 }) {
 	return (
-		<a
-			className='w-80 aspect-square relative rounded-md overflow-hidden shadow-md lg:[&:hover>div]:max-h-full lg:[&:hover>div]:h-full lg:[&:hover>img]:scale-110'
+		<motion.a
 			href={href}
+			className='w-80 aspect-square relative rounded-md overflow-hidden shadow-md lg:[&:hover>div]:max-h-full lg:[&:hover>div]:h-full lg:[&:hover>img]:scale-110'
+			initial='hide'
+			whileInView='show'
+			viewport={{ once: true }}
+			variants={{
+				hide: {
+					opacity: 0,
+					y: 60,
+				},
+				show: {
+					opacity: 1,
+					y: 0,
+					transition: {
+						duration: 1,
+						delay: transitionDelay,
+					},
+				},
+			}}
 		>
 			<Image
 				src={image}
@@ -27,6 +49,6 @@ export default function ServiceItem({
 					{title}
 				</span>
 			</div>
-		</a>
+		</motion.a>
 	);
 }
