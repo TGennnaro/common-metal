@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Logo from './Logo';
 
 export default function Footer() {
 	const size = 256;
@@ -6,7 +7,7 @@ export default function Footer() {
 		<div>
 			<div className='bg-zinc-50 border-y border-zinc-200'>
 				<div className='flex p-8 gap-8 flex-wrap max-w-screen-xl mx-auto'>
-					<Image src='/logo-nobg.png' alt='logo' width={size} height={size} />
+					<Logo width={196} height={170} />
 					<div className='flex flex-col font-medium'>
 						<span className='text-lg font-semibold'>
 							Commonwealth Metal Company
