@@ -14,7 +14,7 @@ function ImageItem({ image, text }: { image: string; text: string }) {
 		<li className='w-40 aspect-square relative rounded-md overflow-hidden shadow-md'>
 			<Image src={image} alt={text} fill={true} className='object-cover' />
 			<div className='absolute inset-0 bg-black/30 text-white flex items-end justify-center pb-2 font-semibold text-2xl'>
-				<span>{text}</span>
+				<span className='text-center'>{text}</span>
 			</div>
 		</li>
 	);
@@ -33,7 +33,7 @@ export default function Page() {
 				<Hero
 					pretext='affordable products'
 					title='Learn about our products'
-					description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, expedita reprehenderit, earum assumenda quis commodi quia similique rerum possimus perspiciatis, modi delectus voluptates provident odio natus nulla esse debitis obcaecati?'
+					description='Commonwealth Metal has always striven to provide our customers the very best products at the lowest prices. This has been a hallmark of the business for over thirty years and has brought us many satisfied repeat customers. Commonwealth sales professionals are trained to comb all markets and producers of metal products to find the best prices and most convenient delivery possibilities.'
 				/>
 			</Section>
 			<Divider />
@@ -109,7 +109,7 @@ export default function Page() {
 						<ImageItem image='/services/tubes_steel.jpg' text='Tubing' />
 						<ImageItem
 							image='/services/rectangular_steel.webp'
-							text='Rectangular'
+							text='Square and Rectangular'
 						/>
 						<ImageItem image='/services/pipe_steel.jpg' text='Pipe' />
 					</ul>
