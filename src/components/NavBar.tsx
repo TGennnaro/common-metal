@@ -119,7 +119,7 @@ export default function NavBar() {
 							href='tel:12159380810'
 						>
 							<Phone className='w-6 h-6 mr-3' />
-							+1 215 938-0810
+							+1 215 394-8234
 						</a>
 					</li>
 				</ul>
@@ -128,7 +128,7 @@ export default function NavBar() {
 					href='tel:12159380810'
 				>
 					<Phone className='w-6 h-6 mr-3' />
-					+1 215 938-0810
+					+1 215 394-8234
 				</a>
 				<Button
 					className='bg-white border border-zinc-200 text-zinc-800 block lg:hidden'
