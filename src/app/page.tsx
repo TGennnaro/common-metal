@@ -81,7 +81,7 @@ export default function Home() {
 			</Section>
 			<Section>
 				<Hero
-					pretext='For any occasion'
+					pretext='For any size'
 					title='Solutions for any project'
 					description='We offer the tools and services to complete any project, big or small. Our goal is to offer tailored solutions to meet
 					the unique requirements of every project.'
