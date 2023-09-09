@@ -217,7 +217,7 @@ export default function Page() {
 			<Section>
 				<Hero
 					pretext='published article'
-					title='"Spotlight on the Woman of Steel"'
+					title='"Woman of Steel"'
 					description='by Matthew Donelson, 1998'
 				/>
 				<div className='text-justify leading-8 text-lg indent-8 w-3/4 mx-auto'>
