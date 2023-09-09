@@ -22,7 +22,7 @@ export default function Page() {
 			<Section>
 				<Hero
 					pretext='Specialized expertise'
-					title='Expertise for any enterprise'
+					title='Expertise for any project'
 					description='Elevate your enterprise with specialized expertise in fabrication and processing, offering tailored solutions crafted for diverse industries and their unique needs.'
 				/>
 				<ul className='flex gap-8 justify-center flex-wrap'>
