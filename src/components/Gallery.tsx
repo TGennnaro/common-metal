@@ -84,7 +84,7 @@ export default function Gallery() {
 				/>
 				<GalleryItem
 					image={`/steel3.jpg`}
-					header='Leading the future in steel welding and fabrication'
+					header='Leading the future in fabrication'
 				/>
 			</ReactSimplyCarousel>
 		</div>
