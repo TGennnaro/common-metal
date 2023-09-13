@@ -38,12 +38,7 @@ export default function ContactForm() {
 				>
 					First name
 				</label>
-				<Input
-					defaultValue='Tyler'
-					name='firstname'
-					id='firstname'
-					className='mt-3'
-				/>
+				<Input name='firstname' id='firstname' className='mt-3' />
 			</div>
 			<div>
 				<label
@@ -52,12 +47,7 @@ export default function ContactForm() {
 				>
 					Last name
 				</label>
-				<Input
-					defaultValue='Gennaro'
-					name='lastname'
-					id='lastname'
-					className='mt-3'
-				/>
+				<Input name='lastname' id='lastname' className='mt-3' />
 			</div>
 			<div className='sm:col-span-2'>
 				<label
@@ -66,12 +56,7 @@ export default function ContactForm() {
 				>
 					Email
 				</label>
-				<Input
-					defaultValue='test@example.com'
-					name='email'
-					id='email'
-					className='mt-3'
-				/>
+				<Input name='email' id='email' className='mt-3' />
 			</div>
 			<div className='sm:col-span-2'>
 				<label
@@ -80,12 +65,7 @@ export default function ContactForm() {
 				>
 					Phone number
 				</label>
-				<Input
-					defaultValue='123 456-1234'
-					name='phone'
-					id='phone'
-					className='mt-3'
-				/>
+				<Input name='phone' id='phone' className='mt-3' />
 			</div>
 			<div className='sm:col-span-2'>
 				<label
@@ -95,7 +75,6 @@ export default function ContactForm() {
 					Message
 				</label>
 				<Textarea
-					defaultValue='This is a test message 1234'
 					name='message'
 					id='message'
 					rows={4}
