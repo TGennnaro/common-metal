@@ -63,19 +63,20 @@ const projects: Project[] = [
 		},
 	},
 	{
-		title: 'Stadium Safety Rails',
-		service: 'safety rails installation',
-		location: '435 Crossfield Road, King of Prussia, PA 19406',
+		title: 'Stadium Seating Barriers',
+		service: 'seating barrier installation',
+		location:
+			'Lower Merion High School, 315 East Montgomery Ave, Ardmore, PA 19003',
 		folder: '/projects/hs_bleachers/bleachers-%d.jpg',
 		length: 8,
 		icon: School,
 	},
 	{
-		title: 'Park Benches',
+		title: 'Bus Stop Benches',
 		service: 'bench fabrication',
-		location: 'Unknown location',
+		location: 'Various locations around Northeast Philadelphia, PA',
 		folder: '/projects/benches/bench-%d.jpg',
-		length: 5,
+		length: 4,
 		icon: TreeDeciduous,
 	},
 ];
