@@ -59,23 +59,23 @@ export default function Home() {
 					<BlurCard
 						image='/projects/wawa_station/wawa-1.jpg'
 						title='SEPTA Wawa Station'
-						description='Fabricated and installed the railings for the station.'
+						description="Fabricated and installed the safety railings for SEPTA's Wawa Station."
 						className='aspect-[3/4]'
-						href='/projects#septa_wawa%20station'
+						href='/projects/featured#septa_wawa%20station'
 					/>
 					<BlurCard
-						image='/projects/secane_station/secane-2.jpg'
-						title='SEPTA Secane Station'
-						description='Fabricated and installed the railings for the station.'
+						image='/projects/tommy_cart/tommy-1.png'
+						title='Tommy Carts'
+						description='Manufactured and welded Tommy Carts for Burns Recycling, the leading recycling firm on the east coast.'
 						className='aspect-[3/4]'
-						href='/projects#septa_secane%20station'
+						href='/projects/featured#tommy_carts'
 					/>
 					<BlurCard
-						image='/projects/unknown_railings/unknown-2.jpg'
-						title='Unknown Railings'
-						description='Fabricated and installed the railings.'
+						image='/projects/hs_bleachers/bleachers-6.jpg'
+						title='Stadium Seating Barriers'
+						description='Fabricated and installed the seating barriers for the stadium at Lower Merion High School in Ardmore, PA.'
 						className='aspect-[3/4]'
-						href='/projects#unknown_railings'
+						href='/projects/featured#stadium_seating%20barriers'
 					/>
 				</div>
 			</Section>
