@@ -15,13 +15,14 @@ export default function BlurCard({
 	href?: string;
 }) {
 	return (
-		<a className='relative overflow-hidden rounded-md shadow-md' href={href}>
-			<div
-				className={cn(
-					'hover:blur-sm aspect-square [transition:_300ms_filter_linear] ease-out [&:hover>img]:scale-110 [&:hover+div]:opacity-100 [&:hover~[data-hideaway-title]]:translate-y-full',
-					className
-				)}
-			>
+		<a
+			className={cn(
+				'w-full aspect-square relative overflow-hidden rounded-md shadow-md',
+				className
+			)}
+			href={href}
+		>
+			<div className='w-full h-full hover:blur-sm [transition:_300ms_filter_linear] ease-out [&:hover>img]:scale-110 [&:hover+div]:opacity-100 [&:hover~[data-hideaway-title]]:translate-y-full'>
 				<Image
 					src={image}
 					alt={title}
