@@ -25,24 +25,30 @@ export default function Page() {
 					title='Expertise for any project'
 					description='Elevate your enterprise with specialized expertise in fabrication and processing, offering tailored solutions crafted for diverse industries and their unique needs.'
 				/>
-				<ul className='flex gap-8 justify-center flex-wrap'>
+				<ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4'>
 					<BlurCard
-						title='Rail and post'
-						description='We offer a wide variety of rail and post options. We can also customize your railings to fit your needs.'
-						image='/services/rail&post.jpg'
-						className='w-[300px]'
-					/>
-					<BlurCard
-						title='Short-run railings'
+						title='Railings'
 						description='We fabricate and install custom railings for your home or business. Contact us for a customized quote!'
-						image='/services/short_run_rail.jpg'
-						className='w-[300px]'
+						image='/projects/railings.jpg'
+						className='max-w-xs mx-auto'
 					/>
 					<BlurCard
-						title='Window Guards / Security Screens'
+						title='Window Guards and Security Screens'
 						description='Our expert welders fabricate customized window guards and security screens to suit your unique needs.'
-						image='/projects/screens.jpg'
-						className='w-[300px]'
+						image='/services/window_guards.jpg'
+						className='max-w-xs mx-auto'
+					/>
+					<BlurCard
+						title='Benches'
+						description='With an unwavering dedication to precision and design, we forge benches that are not just robust and functional but also a testament to enduring style.'
+						image='/projects/benches/bench-1.jpg'
+						className='max-w-xs mx-auto'
+					/>
+					<BlurCard
+						title='Stairs'
+						description='Our skilled craftsmen blend the strength of steel with artistic elegance to create staircases that are not just functional but also architectural masterpieces, adding a touch of sophistication to any space.'
+						image='/projects/stairs.jpg'
+						className='max-w-xs mx-auto'
 					/>
 				</ul>
 			</Section>
