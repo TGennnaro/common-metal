@@ -84,7 +84,7 @@ export default function Page() {
 						industry.
 					</p>
 				</div>
-				<div className='flex gap-16 justify-center mt-8'>
+				<div className='flex gap-16 justify-center mt-8 flex-wrap'>
 					<Image
 						src='/about-us/old-image-1.jpg'
 						alt='historic_image_1'
@@ -115,7 +115,7 @@ export default function Page() {
 					className='mb-8'
 				/>
 				<div className='mx-auto mb-16'>
-					<ul className='grid grid-cols-2 gap-8'>
+					<ul className='grid md:grid-cols-2 grid-cols-1 gap-8'>
 						<ListCard Icon={HardHat} title='Superior construction management'>
 							Streamline your project with our expert management, delivering
 							timely completion and exceptional results by optimizing resources
@@ -144,7 +144,7 @@ export default function Page() {
 						<h3 className='text-2xl font-semibold mb-8 text-center'>
 							NAICS Codes
 						</h3>
-						<ul className='grid grid-cols-2 gap-x-16 gap-y-4'>
+						<ul className='grid md:grid-cols-2 grid-cols-1 gap-x-16 gap-y-4'>
 							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
 							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
 							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
