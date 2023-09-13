@@ -54,12 +54,12 @@ export default function Page() {
 						</p>
 					</div>
 					<div className='flex justify-center bg-zinc-100 p-8 rounded-lg shadow-xl'>
-						<div className='w-80 aspect-square relative'>
+						<div className='w-80 aspect-square relative overflow-hidden'>
 							<Image
 								src='/services/stacked_bars.jpg'
 								alt='stacked_bars'
 								fill={true}
-								className='aspect-square rounded-lg'
+								className='aspect-square rounded-lg object-cover object-left-bottom scale-150'
 							/>
 						</div>
 					</div>
