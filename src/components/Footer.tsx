@@ -6,13 +6,14 @@ export default function Footer() {
 	return (
 		<div>
 			<div className='bg-zinc-50 border-y border-zinc-200'>
-				<div className='flex justify-between gap-8 p-8 flex-wrap max-w-screen-xl mx-auto'>
-					<div className='flex gap-8'>
+				<div className='flex justify-center gap-8 p-8 flex-wrap max-w-screen-xl mx-auto sm:justify-between'>
+					<div className='flex flex-col sm:flex-row gap-8 items-center'>
 						<Image
 							width={196}
 							height={170}
 							src='/logo-nobg.png'
 							alt='commonwealth_logo'
+							className='h-fit'
 						/>
 						<div className='flex flex-col font-medium'>
 							<span className='text-lg font-semibold'>
