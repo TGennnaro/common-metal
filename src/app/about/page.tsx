@@ -109,54 +109,6 @@ export default function Page() {
 				</div>
 			</Section>
 			<Section>
-				<Hero pretext='your trusted experts' title='Meet the team' />
-				<div className='flex justify-center gap-16 mt-8'>
-					<div className='text-center w-fit'>
-						<Image
-							src='/team/suzzanne.jpg'
-							alt='suzzanne_stillwell'
-							width={200}
-							height={200}
-							className='object-cover h-[200px] rounded-full object-top'
-						/>
-						<h3 className='mt-6 tracking-tight leading-7 font-semibold'>
-							Suzzanne Stilwell
-						</h3>
-						<span className='leading-6 text-sm text-zinc-600'>Owner</span>
-					</div>
-					<div className='text-center w-fit'>
-						<Image
-							src='/team/mark.jpg'
-							alt='mark_kissling'
-							width={200}
-							height={200}
-							className='object-cover h-[200px] rounded-full object-top'
-						/>
-						<h3 className='mt-6 tracking-tight leading-7 font-semibold'>
-							Mark Kissling
-						</h3>
-						<span className='leading-6 text-sm text-zinc-600'>
-							Head of Marketing
-						</span>
-					</div>
-					<div className='text-center w-fit'>
-						<Image
-							src='/team/sally.jpg'
-							alt='sally_johnson'
-							width={200}
-							height={200}
-							className='object-cover h-[200px] rounded-full object-right-top'
-						/>
-						<h3 className='mt-6 tracking-tight leading-7 font-semibold'>
-							Sally Johnson
-						</h3>
-						<span className='leading-6 text-sm text-zinc-600'>
-							Senior Saleswoman
-						</span>
-					</div>
-				</div>
-			</Section>
-			<Section>
 				<Hero
 					pretext='unique service'
 					title='Capability statement'
@@ -189,19 +141,10 @@ export default function Page() {
 				</div>
 				<div className='flex justify-center flex-wrap gap-8'>
 					<div className='p-8 w-fit'>
-						<h3 className='text-2xl font-semibold mb-8'>Core Competencies</h3>
-						<ul className='flex flex-col gap-4'>
-							<ListItem>Asphalt</ListItem>
-							<ListItem>Concrete</ListItem>
-							<ListItem>Site Preparation and excavation</ListItem>
-							<ListItem>Site demolition and clearing</ListItem>
-							<ListItem>Underground utilities</ListItem>
-							<ListItem>Trucking and hauling</ListItem>
-						</ul>
-					</div>
-					<div className='p-8 w-fit'>
-						<h3 className='text-2xl font-semibold mb-8'>NAICS Codes</h3>
-						<ul className='flex flex-col gap-4'>
+						<h3 className='text-2xl font-semibold mb-8 text-center'>
+							NAICS Codes
+						</h3>
+						<ul className='grid grid-cols-2 gap-x-16 gap-y-4'>
 							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
 							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
 							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
@@ -220,15 +163,15 @@ export default function Page() {
 					title='"Woman of Steel"'
 					description='by Matthew Donelson, 1998'
 				/>
+				<Image
+					src='/team/suzzanne.jpg'
+					alt='suzzanne_portrait'
+					width={180}
+					height={180}
+					className='aspect-square object-cover mx-auto rounded-full shadow-md'
+				/>
 				<div className='text-justify leading-8 text-lg indent-8 w-3/4 mx-auto'>
 					<p className='mt-6'>
-						<Image
-							src='/team/suzzanne.jpg'
-							alt='suzzanne_portrait'
-							width={200}
-							height={300}
-							className='float-left mr-8 mb-4 rounded-md shadow-md'
-						/>
 						Suzzanne Stilwell is the owner and president of Commonwealth Metal
 						Company, a 100% female-owned company. The company has been in
 						business since 1988. Commonwealth Metal is a warehouse distribution
