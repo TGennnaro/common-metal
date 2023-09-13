@@ -30,8 +30,7 @@ export default function Page() {
 			<Section>
 				<Hero
 					pretext='what we offer'
-					title='Welds for any project'
-					description='We offer specialty welding for stainless steel and aluminum.'
+					title='Stainless steel and aluminum welds'
 				/>
 				<div className='mt-4'>
 					<h1 className='text-2xl font-semibold mb-4'>MIG Welding</h1>
