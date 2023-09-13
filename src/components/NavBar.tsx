@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, Menu, Phone } from 'lucide-react';
+import { ChevronDown, Menu, Phone, Printer } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Button from './Button';
@@ -113,23 +113,27 @@ export default function NavBar() {
 							}
 						/>
 					))}
-					<li>
-						<a
-							className='flex items-center text-lg font-medium lg:hidden mt-4 tracking-wide'
-							href='tel:12159380810'
-						>
-							<Phone className='w-6 h-6 mr-3' />
+					<li className='lg:hidden flex flex-col text-md font-medium tracking-wide gap-4'>
+						<a className='items-center flex' href='tel:12159380810'>
+							<Phone className='w-5 h-5 mr-3' />
 							+1 215 394-8234
+						</a>
+						<a className='items-center flex' href='fax:12153948313'>
+							<Printer className='w-5 h-5 mr-3' />
+							+1 215 394-8313
 						</a>
 					</li>
 				</ul>
-				<a
-					className='items-center text-lg font-medium hidden lg:flex tracking-wide'
-					href='tel:12159380810'
-				>
-					<Phone className='w-6 h-6 mr-3' />
-					+1 215 394-8234
-				</a>
+				<div className='flex flex-col text-md font-medium tracking-wide gap-1'>
+					<a className='items-center hidden lg:flex' href='tel:12159380810'>
+						<Phone className='w-5 h-5 mr-3' />
+						+1 215 394-8234
+					</a>
+					<a className='items-center hidden lg:flex' href='fax:12153948313'>
+						<Printer className='w-5 h-5 mr-3' />
+						+1 215 394-8313
+					</a>
+				</div>
 				<Button
 					className='bg-white border border-zinc-200 text-zinc-800 block lg:hidden'
 					onClick={() => setNavOpen(!navOpen)}
