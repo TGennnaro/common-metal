@@ -9,7 +9,7 @@ import { getMetadata } from '@/lib/utils';
 import { ChevronRight } from 'lucide-react';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = getMetadata('Home');
+export const metadata: Metadata = getMetadata('');
 
 export default function Home() {
 	return (

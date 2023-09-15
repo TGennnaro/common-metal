@@ -7,7 +7,10 @@ export function cn(...args: (string | undefined)[]) {
 
 export function getMetadata(title: string) {
 	return {
-		title: config.seo.title.replace('%s', title),
+		title:
+			title.length === 0
+				? config.seo.title.default
+				: config.seo.title.template.replace('%s', title),
 		description: config.seo.description,
 	};
 }
