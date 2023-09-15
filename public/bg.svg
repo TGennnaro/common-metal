@@ -1,0 +1,26 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'>
+	<defs>
+		<pattern
+			id='brick-wall'
+			x='0'
+			y='0'
+			width='42'
+			height='44'
+			patternUnits='userSpaceOnUse'
+		>
+			<path
+				fill='#ececec'
+				fillRule='evenodd'
+				fillOpacity='0.21'
+				d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'
+			/>
+		</pattern>
+	</defs>
+	<rect
+		x='0'
+		y='0'
+		width='100%'
+		height='100%'
+		fill='url(#brick-wall)'
+	/>
+</svg>
