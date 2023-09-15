@@ -1,6 +1,5 @@
 import HeaderImage from '@/components/HeaderImage';
 import Hero from '@/components/Hero';
-import LazyImage from '@/components/LazyImage';
 import Section from '@/components/Section';
 import { getMetadata } from '@/lib/utils';
 import {
@@ -12,6 +11,7 @@ import {
 	Warehouse,
 } from 'lucide-react';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 // Reformat
 // Add potential video of Suzzanne as intro
@@ -84,21 +84,21 @@ export default function Page() {
 					</p>
 				</div>
 				<div className='flex gap-16 justify-center mt-8 flex-wrap'>
-					<LazyImage
+					<Image
 						src='/about-us/old-image-1.jpg'
 						alt='historic_image_1'
 						width={300}
 						height={200}
 						className='aspect-[3/2] object-cover rounded-md shadow-md'
 					/>
-					<LazyImage
+					<Image
 						src='/about-us/old-image-2.jpg'
 						alt='historic_image_2'
 						width={300}
 						height={200}
 						className='aspect-[3/2] object-cover rounded-md shadow-md'
 					/>
-					<LazyImage
+					<Image
 						src='/about-us/old-image-3.jpg'
 						alt='historic_image_3'
 						width={300}
@@ -162,13 +162,15 @@ export default function Page() {
 					title='"Woman of Steel"'
 					description='by Matthew Donelson, 1998'
 				/>
-				<LazyImage
-					src='/team/suzzanne.jpg'
-					alt='suzzanne_portrait'
-					width={180}
-					height={180}
-					className='aspect-square object-cover mx-auto rounded-full shadow-md'
-				/>
+				<div>
+					<Image
+						src='/team/suzzanne.jpg'
+						alt='suzzanne_portrait'
+						width={180}
+						height={180}
+						className='aspect-square object-cover mx-auto rounded-full shadow-md'
+					/>
+				</div>
 				<div className='text-justify leading-8 text-lg indent-8 w-3/4 mx-auto'>
 					<p className='mt-6'>
 						Suzzanne Stilwell is the owner and president of Commonwealth Metal
