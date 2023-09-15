@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { Captions } from 'yet-another-react-lightbox/plugins';
 import Button from '@/components/Button';
+import LazyImage from '@/components/LazyImage';
 
 interface Project {
 	title: string;
@@ -172,14 +173,14 @@ export default function ImageGallery() {
 						<div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
 							{Array.from({ length: project.length }).map((_, i) => (
 								<div
-									className='relative rounded-md aspect-[3/4] [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
+									className='relative rounded-md shadow-md aspect-[3/4] [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
 									key={i}
 								>
-									<Image
+									<LazyImage
 										src={project.folder.replace('%d', `${i + 1}`)}
 										alt={`${project.title}_${i}`}
 										fill={true}
-										className='object-cover shadow-md cursor-pointer transition-transform duration-300'
+										className='object-cover cursor-pointer transition-transform duration-300'
 										onClick={() => {
 											setIndex(i);
 											setPage(projectIndex);

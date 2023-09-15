@@ -2,6 +2,7 @@ import ContactButton from '@/components/ContactButton';
 import Divider from '@/components/Divider';
 import HeaderImage from '@/components/HeaderImage';
 import Hero from '@/components/Hero';
+import LazyImage from '@/components/LazyImage';
 import Section from '@/components/Section';
 import { getMetadata } from '@/lib/utils';
 import { Metadata } from 'next';
@@ -12,7 +13,7 @@ export const metadata: Metadata = getMetadata('Supply of Raw Materials');
 function ImageItem({ image, text }: { image: string; text: string }) {
 	return (
 		<li className='w-40 aspect-square relative rounded-md overflow-hidden shadow-md'>
-			<Image src={image} alt={text} fill={true} className='object-cover' />
+			<LazyImage src={image} alt={text} fill={true} className='object-cover' />
 			<div className='absolute inset-0 bg-black/30 text-white flex items-end justify-center pb-2 font-semibold text-2xl'>
 				<span className='text-center'>{text}</span>
 			</div>
@@ -55,7 +56,7 @@ export default function Page() {
 					</div>
 					<div className='flex justify-center bg-zinc-100 p-8 rounded-lg shadow-xl'>
 						<div className='w-80 aspect-square relative overflow-hidden'>
-							<Image
+							<LazyImage
 								src='/services/stacked_bars.jpg'
 								alt='stacked_bars'
 								fill={true}
@@ -84,7 +85,7 @@ export default function Page() {
 					</div>
 					<div className='flex justify-center bg-white p-8 rounded-lg shadow-xl'>
 						<div className='w-80 aspect-square relative'>
-							<Image
+							<LazyImage
 								src='/services/stacked_plates.jpg'
 								alt='stacked_bars'
 								fill={true}

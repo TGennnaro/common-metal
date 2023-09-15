@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
+import LazyImage from './LazyImage';
 
 export default function BlurCard({
 	image,
@@ -23,7 +23,7 @@ export default function BlurCard({
 			href={href}
 		>
 			<div className='w-full h-full hover:blur-sm [transition:_300ms_filter_linear] ease-out [&:hover>img]:scale-110 [&:hover+div]:opacity-100 [&:hover~[data-hideaway-title]]:translate-y-full'>
-				<Image
+				<LazyImage
 					src={image}
 					alt={title}
 					fill={true}

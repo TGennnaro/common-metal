@@ -1,18 +1,17 @@
 import HeaderImage from '@/components/HeaderImage';
 import Hero from '@/components/Hero';
+import LazyImage from '@/components/LazyImage';
 import Section from '@/components/Section';
 import { getMetadata } from '@/lib/utils';
 import {
 	Check,
 	Construction,
 	HardHat,
-	Hash,
 	LucideIcon,
 	ScrollText,
 	Warehouse,
 } from 'lucide-react';
 import { Metadata } from 'next';
-import Image from 'next/image';
 
 // Reformat
 // Add potential video of Suzzanne as intro
@@ -85,21 +84,21 @@ export default function Page() {
 					</p>
 				</div>
 				<div className='flex gap-16 justify-center mt-8 flex-wrap'>
-					<Image
+					<LazyImage
 						src='/about-us/old-image-1.jpg'
 						alt='historic_image_1'
 						width={300}
 						height={200}
 						className='aspect-[3/2] object-cover rounded-md shadow-md'
 					/>
-					<Image
+					<LazyImage
 						src='/about-us/old-image-2.jpg'
 						alt='historic_image_2'
 						width={300}
 						height={200}
 						className='aspect-[3/2] object-cover rounded-md shadow-md'
 					/>
-					<Image
+					<LazyImage
 						src='/about-us/old-image-3.jpg'
 						alt='historic_image_3'
 						width={300}
@@ -116,7 +115,7 @@ export default function Page() {
 				/>
 				<div className='mx-auto mb-16'>
 					<ul className='grid md:grid-cols-2 grid-cols-1 gap-8'>
-						<ListCard Icon={HardHat} title='Superior construction management'>
+						<ListCard Icon={HardHat} title='Superior management'>
 							Streamline your project with our expert management, delivering
 							timely completion and exceptional results by optimizing resources
 							and communication.
@@ -139,7 +138,7 @@ export default function Page() {
 						</ListCard>
 					</ul>
 				</div>
-				<div className='flex justify-center flex-wrap gap-8'>
+				{/* <div className='flex justify-center flex-wrap gap-8'>
 					<div className='p-8 w-fit'>
 						<h3 className='text-2xl font-semibold mb-8 text-center'>
 							NAICS Codes
@@ -155,7 +154,7 @@ export default function Page() {
 							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
 						</ul>
 					</div>
-				</div>
+				</div> */}
 			</Section>
 			<Section>
 				<Hero
@@ -163,7 +162,7 @@ export default function Page() {
 					title='"Woman of Steel"'
 					description='by Matthew Donelson, 1998'
 				/>
-				<Image
+				<LazyImage
 					src='/team/suzzanne.jpg'
 					alt='suzzanne_portrait'
 					width={180}

@@ -1,10 +1,10 @@
 'use client';
 
-import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
+import 'yet-another-react-lightbox/styles.css';
 
+import LazyImage from '@/components/LazyImage';
 import Section from '@/components/Section';
-import Image from 'next/image';
 import { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
@@ -52,14 +52,14 @@ export default function ImageGallery() {
 					<div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4'>
 						{Array.from({ length }).map((_, i) => (
 							<div
-								className='relative rounded-md aspect-[3/4] [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
+								className='relative rounded-md shadow-md aspect-[3/4] [&:hover>div]:opacity-100 [&:hover>img]:scale-110 overflow-hidden'
 								key={i}
 							>
-								<Image
+								<LazyImage
 									src={path.replace('%d', `${i + 1}`)}
 									alt={`${label}_${i}`}
 									fill={true}
-									className='object-cover shadow-md cursor-pointer transition-transform duration-300'
+									className='object-cover cursor-pointer transition-transform duration-300'
 									onClick={() => {
 										setIndex(i);
 										setPage(sectionIndex);

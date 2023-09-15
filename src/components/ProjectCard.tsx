@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import LazyImage from './LazyImage';
 
 export default function ProjectCard({
 	title,
@@ -33,7 +33,7 @@ export default function ProjectCard({
 				},
 			}}
 		>
-			<Image
+			<LazyImage
 				src={image}
 				alt='steel_image'
 				fill={true}

@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import LazyImage from './LazyImage';
 
 export default function ServiceItem({
 	image,
@@ -38,7 +38,7 @@ export default function ServiceItem({
 				},
 			}}
 		>
-			<Image
+			<LazyImage
 				src={image}
 				alt='steel_image'
 				fill={true}
