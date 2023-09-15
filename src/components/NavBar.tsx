@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Button from './Button';
 import Logo from './Logo';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card';
+import { useWindowSize } from 'rooks';
 
 interface NavItem {
 	label: string;
@@ -37,16 +38,37 @@ const navItems = [
 ];
 
 function NavItem({ item, selected }: { item: NavItem; selected: boolean }) {
-	const linkClassName = `w-fit flex items-center font-semibold cursor-pointer py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-burgundy-400 hover:before:opacity-100 before:pointer-events-none ${
-		selected
-			? 'before:opacity-100 text-burgundy-400'
-			: 'before:opacity-0 hover:text-burgundy-400'
-	}`;
+	const linkClassName =
+		'w-fit flex items-center font-semibold cursor-pointer py-2 relative transition-colors duration-300 before:transition-opacity before:duration-300 before:absolute before:inset-x-0 before:bottom-0 before:h-0.5 before:bg-burgundy-400 hover:before:opacity-100 before:pointer-events-none before:opacity-0';
+	const selectableClassName =
+		linkClassName +
+		` ${
+			selected
+				? 'before:opacity-100 text-burgundy-400'
+				: 'hover:text-burgundy-400'
+		}`;
+	const { innerWidth } = useWindowSize();
 	if (item.subItems) {
+		if (innerWidth !== null && innerWidth <= 1024) {
+			return (
+				<li>
+					<span className={selectableClassName}>{item.label}</span>
+					<ul className='ml-8'>
+						{item.subItems.map((subItem, i) => (
+							<li key={i}>
+								<a href={subItem.href} className={linkClassName}>
+									{subItem.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</li>
+			);
+		}
 		return (
 			<HoverCard openDelay={0} closeDelay={0}>
 				<HoverCardTrigger asChild>
-					<li className={linkClassName}>
+					<li className={selectableClassName}>
 						{item.label}
 						<ChevronDown className='w-4 h-4 ml-1' />
 					</li>
@@ -70,7 +92,7 @@ function NavItem({ item, selected }: { item: NavItem; selected: boolean }) {
 	} else {
 		return (
 			<li>
-				<a href={item.href} className={linkClassName}>
+				<a href={item.href} className={selectableClassName}>
 					{item.label}
 				</a>
 			</li>
