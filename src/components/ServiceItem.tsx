@@ -1,42 +1,20 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import LazyImage from './LazyImage';
 
 export default function ServiceItem({
 	image,
 	title,
 	href,
-	textSize = 'text-2xl',
-	transitionDelay = 0,
 }: {
 	image: string;
 	title: string;
 	href?: string;
-	textSize?: string;
-	transitionDelay?: number;
 }) {
 	return (
-		<motion.a
+		<a
 			href={href}
 			className='w-80 aspect-square relative rounded-md overflow-hidden shadow-md lg:[&:hover>div]:max-h-full lg:[&:hover>div]:h-full lg:[&:hover>img]:scale-110'
-			initial='hide'
-			whileInView='show'
-			viewport={{ once: true }}
-			variants={{
-				hide: {
-					opacity: 0,
-					y: 60,
-				},
-				show: {
-					opacity: 1,
-					y: 0,
-					transition: {
-						duration: 1,
-						delay: transitionDelay,
-					},
-				},
-			}}
 		>
 			<LazyImage
 				src={image}
@@ -49,6 +27,6 @@ export default function ServiceItem({
 					{title}
 				</span>
 			</div>
-		</motion.a>
+		</a>
 	);
 }

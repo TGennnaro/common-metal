@@ -1,38 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import LazyImage from './LazyImage';
 
 export default function ProjectCard({
 	title,
 	image,
-	transitionDelay = 0,
 }: {
 	title: string;
 	image: string;
-	transitionDelay?: number;
 }) {
 	return (
-		<motion.div
-			className='w-36 lg:w-[300px] aspect-square relative rounded-md overflow-hidden shadow-md lg:[&:hover>div]:h-full lg:[&:hover>img]:scale-110'
-			initial='hide'
-			whileInView='show'
-			viewport={{ once: true }}
-			variants={{
-				hide: {
-					opacity: 0,
-					y: 60,
-				},
-				show: {
-					opacity: 1,
-					y: 0,
-					transition: {
-						duration: 1,
-						delay: transitionDelay,
-					},
-				},
-			}}
-		>
+		<div className='w-36 lg:w-[300px] aspect-square relative rounded-md overflow-hidden shadow-md lg:[&:hover>div]:h-full lg:[&:hover>img]:scale-110'>
 			<LazyImage
 				src={image}
 				alt='steel_image'
@@ -44,6 +22,6 @@ export default function ProjectCard({
 					{title}
 				</span>
 			</div>
-		</motion.div>
+		</div>
 	);
 }

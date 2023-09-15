@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import { VariantProps, cva } from 'cva';
-import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import Balancer from 'react-wrap-balancer';
 
@@ -30,20 +29,6 @@ const heroTitleVariants = cva('text-5xl font-bold tracking-tight mt-2', {
 	},
 });
 
-const heroMotionVariants = {
-	hide: {
-		opacity: 0,
-		y: 60,
-	},
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			duration: 1,
-		},
-	},
-};
-
 interface HeroProps
 	extends VariantProps<typeof heroPretextVariants>,
 		VariantProps<typeof heroTitleVariants> {
@@ -61,12 +46,7 @@ export default function Hero({
 	variant,
 }: HeroProps) {
 	return (
-		<motion.header
-			initial='hide'
-			whileInView='show'
-			viewport={{ once: true }}
-			variants={heroMotionVariants}
-		>
+		<h1>
 			<div className={cn('text-center max-w-3xl mx-auto', className)}>
 				{pretext && (
 					<span className={heroPretextVariants({ variant })}>{pretext}</span>
@@ -80,6 +60,6 @@ export default function Hero({
 					</span>
 				)}
 			</div>
-		</motion.header>
+		</h1>
 	);
 }

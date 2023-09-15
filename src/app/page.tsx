@@ -26,19 +26,16 @@ export default function Home() {
 						title='Fabrication & Processing'
 						image='/services/fabrication.jpg'
 						href='/services/fabrication'
-						transitionDelay={0.2}
 					/>
 					<ServiceItem
 						title='Supply of Raw Materials'
 						image='/services/raw_materials.jpg'
 						href='/services/supply'
-						transitionDelay={0.4}
 					/>
 					<ServiceItem
 						title='Welding Capabilities'
 						image='/services/welding.jpg'
 						href='/services/welding'
-						transitionDelay={0.6}
 					/>
 				</div>
 			</Section>
@@ -87,46 +84,14 @@ export default function Home() {
 					the unique requirements of every project.'
 				/>
 				<div className='w-fit grid grid-cols-2 md:grid-cols-4 gap-8 mx-auto mt-8'>
-					<ProjectCard
-						transitionDelay={0.1}
-						title='Bridges'
-						image='/projects/bridge.jpg'
-					/>
-					<ProjectCard
-						transitionDelay={0.2}
-						title='Railroads'
-						image='/projects/railroads.jpg'
-					/>
-					<ProjectCard
-						transitionDelay={0.3}
-						title='Grates'
-						image='/projects/grates.webp'
-					/>
-					<ProjectCard
-						transitionDelay={0.4}
-						title='Screens'
-						image='/projects/screens.jpg'
-					/>
-					<ProjectCard
-						transitionDelay={0.5}
-						title='Staircases'
-						image='/projects/stairs.jpg'
-					/>
-					<ProjectCard
-						transitionDelay={0.6}
-						title='Bollards'
-						image='/projects/parking_pillars.jpg'
-					/>
-					<ProjectCard
-						transitionDelay={0.7}
-						title='Railings'
-						image='/projects/railings.jpg'
-					/>
-					<ProjectCard
-						transitionDelay={0.8}
-						title='Elevators'
-						image='/projects/elevators.jpg'
-					/>
+					<ProjectCard title='Bridges' image='/projects/bridge.jpg' />
+					<ProjectCard title='Railroads' image='/projects/railroads.jpg' />
+					<ProjectCard title='Grates' image='/projects/grates.webp' />
+					<ProjectCard title='Screens' image='/projects/screens.jpg' />
+					<ProjectCard title='Staircases' image='/projects/stairs.jpg' />
+					<ProjectCard title='Bollards' image='/projects/parking_pillars.jpg' />
+					<ProjectCard title='Railings' image='/projects/railings.jpg' />
+					<ProjectCard title='Elevators' image='/projects/elevators.jpg' />
 				</div>
 			</Section>
 		</main>
