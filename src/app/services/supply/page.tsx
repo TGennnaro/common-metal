@@ -104,7 +104,7 @@ export default function Page() {
 						className='text-left m-0'
 					/>
 					<ul className='text-xl text-zinc-600 leading-loose mt-8 flex gap-4 flex-wrap'>
-						<ImageItem image='/services/angled_steel.jpg' text='Angled' />
+						<ImageItem image='/services/angled_steel.jpg' text='Angles' />
 						<ImageItem image='/services/raw_materials.jpg' text='Beams' />
 						<ImageItem image='/services/channel_steel.jpg' text='Channels' />
 						<ImageItem image='/services/tubes_steel.jpg' text='Tubing' />
