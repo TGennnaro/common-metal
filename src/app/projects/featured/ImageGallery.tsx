@@ -34,7 +34,7 @@ interface Project {
 const projects: Project[] = [
 	{
 		title: 'SEPTA Wawa Station',
-		service: 'railing installation',
+		service: 'railing fabrication',
 		location: '1490 West Baltimore Pike, Media, PA 19063',
 		folder: '/projects/wawa_station/wawa-%d.jpg',
 		length: 9,
@@ -42,7 +42,7 @@ const projects: Project[] = [
 	},
 	{
 		title: 'SEPTA Secane Station',
-		service: 'railing installation',
+		service: 'railing and screen fabrication',
 		location: '1297 Providence Road, Secane, PA 19018',
 		folder: '/projects/secane_station/secane-%d.jpg',
 		length: 10,
@@ -65,11 +65,11 @@ const projects: Project[] = [
 	},
 	{
 		title: 'Stadium Seating Barriers',
-		service: 'seating barrier installation',
+		service: 'seating barrier fabrication',
 		location:
 			'Lower Merion High School, 315 East Montgomery Ave, Ardmore, PA 19003',
 		folder: '/projects/hs_bleachers/bleachers-%d.jpg',
-		length: 8,
+		length: 7,
 		icon: School,
 	},
 	{
