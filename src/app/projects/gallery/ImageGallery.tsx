@@ -23,12 +23,17 @@ const gallery = [
 	{
 		label: 'Stainless Steel Elevators',
 		path: '/projects/elevators/elevator-%d.jpg',
-		length: 5,
+		length: 6,
 	},
 	{
-		label: 'Stainless Steel Staircases',
+		label: 'Steel Staircases',
 		path: '/projects/stairs/stairs-%d.jpg',
 		length: 10,
+	},
+	{
+		label: 'Carbon Steel Railings with Screen Infills',
+		path: '/projects/carbon_railings/railings-%d.jpg',
+		length: 9,
 	},
 	{
 		label: 'Miscellaneous Projects',
