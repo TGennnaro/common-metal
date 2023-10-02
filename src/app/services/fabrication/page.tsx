@@ -28,7 +28,7 @@ export default function Page() {
 				<ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4'>
 					<BlurCard
 						title='Railings'
-						description='We fabricate and install custom railings for your home or business. Contact us for a customized quote!'
+						description='We specialize in fabricating railings from the simple to the intricate. Contact us for a customized quote!'
 						image='/projects/railings.jpg'
 						className='max-w-xs mx-auto'
 					/>
