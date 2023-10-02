@@ -7,24 +7,51 @@ import config from '@/config/config';
 import { FormEvent, useState } from 'react';
 
 export default function ContactForm() {
-	function submitForm(e: FormEvent) {
+	const [isLoading, setIsLoading] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isError, setIsError] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('');
+	const [chars, setChars] = useState(0);
+
+	async function submitForm(e: FormEvent) {
 		e.preventDefault();
+		setIsLoading(true);
 		const formData = new FormData(e.target as HTMLFormElement);
-		fetch('/api/contact', {
+		const message = formData.get('message');
+		if (message !== null && message.length > config.maxEmailCharacters) {
+			setIsSuccess(false);
+			setIsError(true);
+			setErrorMessage(
+				`Error: Your message cannot exceed ${config.maxEmailCharacters} characters.`
+			);
+			setIsLoading(false);
+			return;
+		}
+		let fetchResult = await fetch('/api/contact', {
 			method: 'POST',
 			body: JSON.stringify({
 				firstName: formData.get('firstname'),
 				lastName: formData.get('lastname'),
 				email: formData.get('email'),
 				phone: formData.get('phone'),
-				message: formData.get('message'),
+				message,
 			}),
-		})
-			.then((res) => res.json())
-			.then((data) => console.log(data));
+		});
+		const response: ContactResponse = await fetchResult.json();
+		console.log(response);
+		if (response.status === 200) {
+			setIsSuccess(true);
+			setIsError(false);
+			setErrorMessage('');
+			document.getElementsByTagName('form')[0].reset();
+			setChars(0);
+		} else {
+			setIsSuccess(false);
+			setIsError(true);
+			setErrorMessage(`Error: ${response.message}`);
+		}
+		setIsLoading(false);
 	}
-
-	const [chars, setChars] = useState(0);
 
 	return (
 		<form
@@ -82,14 +109,29 @@ export default function ContactForm() {
 					onChange={(e: FormEvent<HTMLTextAreaElement>) =>
 						setChars(e.currentTarget?.value.length)
 					}
+					maxLength={config.maxEmailCharacters}
 				/>
 				<span className='mt-2 text-xs text-zinc-600 text-right block'>
 					{chars}/{config.maxEmailCharacters} characters
 				</span>
 			</div>
-			<Button type='submit' className='sm:col-span-2 ml-auto'>
+			<Button
+				type='submit'
+				className='sm:col-span-2 ml-auto'
+				isLoading={isLoading}
+			>
 				Send message
 			</Button>
+			{isSuccess && (
+				<span className='text-green-500 sm:col-span-2 ml-auto -mt-2'>
+					Your message was sent successfully!
+				</span>
+			)}
+			{isError && (
+				<span className='text-red-500 sm:col-span-2 ml-auto -mt-2'>
+					{errorMessage}
+				</span>
+			)}
 		</form>
 	);
 }

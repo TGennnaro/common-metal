@@ -29,6 +29,7 @@ export async function POST(req: Request) {
 	const body = await req.json();
 	try {
 		const { firstName, lastName, email, phone, message } = schema.parse(body);
+		await new Promise((resolve) => setTimeout(resolve, 2000));
 		sendMail(
 			`New message from ${firstName} ${lastName}`,
 			`
@@ -47,7 +48,7 @@ export async function POST(req: Request) {
 		return NextResponse.json({ status: 200, message: 'success' });
 	} catch (err) {
 		if (err instanceof ZodError) {
-			return NextResponse.json({ status: 400, message: err.issues });
+			return NextResponse.json({ status: 400, message: err.issues[0].message });
 		} else {
 			return NextResponse.json({ status: 500, message: err });
 		}

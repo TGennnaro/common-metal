@@ -1,9 +1,9 @@
-import { cn } from '@/lib/utils';
 import { VariantProps, cva } from 'cva';
+import { Loader2 } from 'lucide-react';
 import { forwardRef } from 'react';
 
 const buttonVariants = cva(
-	'p-3 rounded-md w-fit flex items-center justify-center transition-all duration-300 ease-out font-medium',
+	'p-3 rounded-md w-fit flex items-center justify-center transition-all duration-300 ease-out font-medium disabled:opacity-50 disabled:cursor-not-allowed',
 	{
 		variants: {
 			variant: {
@@ -20,16 +20,20 @@ const buttonVariants = cva(
 
 interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-		VariantProps<typeof buttonVariants> {}
+		VariantProps<typeof buttonVariants> {
+	isLoading?: boolean;
+}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-	({ children, className = '', variant, ...props }, ref) => {
+	({ children, isLoading, className = '', variant, ...props }, ref) => {
 		return (
 			<button
 				ref={ref}
 				className={buttonVariants({ variant, className })}
+				disabled={props.disabled || isLoading}
 				{...props}
 			>
+				{isLoading && <Loader2 className='animate-spin w-4 h-4 mr-2' />}
 				{children}
 			</button>
 		);
