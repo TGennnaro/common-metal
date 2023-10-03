@@ -17,7 +17,7 @@ export default function HeaderImage({
 			<Image
 				src={image}
 				alt={alt}
-				layout='fill'
+				fill={true}
 				className={cn('object-cover object-top', imageClass ?? '')}
 			/>
 			<div className='absolute inset-0 bg-black/40 flex items-center justify-center'>

@@ -11,9 +11,11 @@ const buttonClass =
 
 function GalleryItem({
 	image,
+	header,
 	description,
 }: {
 	image: string;
+	header?: string;
 	description?: string;
 }) {
 	return (
@@ -21,16 +23,24 @@ function GalleryItem({
 			<Image
 				src={image}
 				alt='steel_image'
-				layout='fill'
+				fill={true}
+				sizes='100vw'
 				className='object-cover'
 			/>
-			{description && (
-				<div className='absolute inset-0 p-16 z-10 flex items-center justify-center bg-black/40'>
-					<span className='text-center text-xl lg:text-5xl !leading-snug font-bold text-white p-4 rounded-md [text-shadow:_0_2px_4px_rgba(0,_0,_0,_0.4)]'>
-						<Balancer>{description}</Balancer>
-					</span>
+			{header || description ? (
+				<div className='absolute inset-0 p-16 z-10 flex flex-col items-center justify-center bg-black/40'>
+					{header && (
+						<span className='text-center text-3xl lg:text-6xl !leading-snug font-bold text-white rounded-md [text-shadow:_0_2px_4px_rgba(0,_0,_0,_0.4)] max-w-screen-xl'>
+							<Balancer>{header}</Balancer>
+						</span>
+					)}
+					{description && (
+						<span className='text-center text-base lg:text-2xl !leading-snug font-semibold text-white rounded-md [text-shadow:_0_2px_4px_rgba(0,_0,_0,_0.4)] max-w-screen-xl'>
+							<Balancer>{description}</Balancer>
+						</span>
+					)}
 				</div>
-			)}
+			) : null}
 		</div>
 	);
 }
@@ -61,19 +71,20 @@ export default function Gallery() {
 					},
 				}}
 				autoplay={true}
-				autoplayDelay={5000}
+				autoplayDelay={10000}
 			>
 				<GalleryItem
 					image={`/steel1.jpg`}
-					description='Leading the future in steel welding and fabrication'
+					header='COMMONWEALTH METAL COMPANY'
+					description='For over thirty years, metal fabricating and sales in the Tri-State area'
 				/>
 				<GalleryItem
 					image={`/steel2.jpg`}
-					description='Providing you with the service and expertise you need'
+					header='Providing you with the service and expertise you need'
 				/>
 				<GalleryItem
 					image={`/steel3.jpg`}
-					description='Helping you build the future of your company'
+					header='Leading the future in fabrication'
 				/>
 			</ReactSimplyCarousel>
 		</div>

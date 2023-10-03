@@ -7,7 +7,11 @@
 	--background-rgb: 255, 255, 255;
 }
 
+* {
+	scroll-behavior: smooth;
+}
+
 body {
-	color: rgb(var(--foreground-rgb));
+	@apply text-zinc-900;
 	background: rgb(var(--background-rgb));
 }

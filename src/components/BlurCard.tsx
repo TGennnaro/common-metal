@@ -1,23 +1,29 @@
-import Image from 'next/image';
+import { cn } from '@/lib/utils';
+import LazyImage from './LazyImage';
 
 export default function BlurCard({
 	image,
 	title,
 	description,
-	size = 300,
+	className = '',
+	href,
 }: {
 	image: string;
 	title: string;
 	description?: string;
-	size?: number;
+	className?: string;
+	href?: string;
 }) {
 	return (
-		<div className='relative overflow-hidden rounded-md shadow-md'>
-			<div
-				className='hover:blur-sm aspect-square [transition:_300ms_filter_linear] ease-out [&:hover>img]:scale-110 [&:hover+div]:opacity-100 [&:hover~[data-hideaway-title]]:translate-y-full'
-				style={{ width: `${size}px` }}
-			>
-				<Image
+		<a
+			className={cn(
+				'w-full aspect-square relative overflow-hidden rounded-md shadow-md',
+				className
+			)}
+			href={href}
+		>
+			<div className='w-full h-full hover:blur-sm [transition:_300ms_filter_linear] ease-out [&:hover>img]:scale-110 [&:hover+div]:opacity-100 [&:hover~[data-hideaway-title]]:translate-y-full'>
+				<LazyImage
 					src={image}
 					alt={title}
 					fill={true}
@@ -39,6 +45,6 @@ export default function BlurCard({
 					{title}
 				</span>
 			</div>
-		</div>
+		</a>
 	);
 }
