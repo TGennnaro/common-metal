@@ -30,7 +30,7 @@ export default function Page() {
 							</li>
 							<li className='flex gap-x-4 mt-4'>
 								<Phone className='text-zinc-400' />
-								<span className='text-zinc-600'>+1 (215) 938-0810</span>
+								<span className='text-zinc-600'>+1 (215) 394-8234</span>
 							</li>
 							<li className='flex gap-x-4 mt-4'>
 								<Mail className='text-zinc-400' />
