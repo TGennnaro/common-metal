@@ -52,7 +52,7 @@ export default function Home() {
 						</Button>
 					</a>
 				</div>
-				<div className='grid grid-cols-3 mt-8 gap-x-8 px-8 2xl:px-8'>
+				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 gap-x-8 gap-y-8 px-8 2xl:px-8'>
 					<BlurCard
 						image='/projects/wawa_station/wawa-1.jpg'
 						title='SEPTA Wawa Station'
@@ -71,7 +71,7 @@ export default function Home() {
 						image='/projects/hs_bleachers/bleachers-6.jpg'
 						title='Stadium Seating Barriers'
 						description='Fabricated and installed the seating barriers for the stadium at Lower Merion High School in Ardmore, PA.'
-						className='aspect-[3/4]'
+						className='sm:w-1/2 lg:w-auto mx-auto sm:col-span-2 lg:col-span-1 aspect-[3/4]'
 						href='/projects/featured#stadium_seating%20barriers'
 					/>
 				</div>

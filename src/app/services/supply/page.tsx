@@ -39,8 +39,8 @@ export default function Page() {
 			</Section>
 			<Divider />
 			<Section>
-				<div className='flex justify-between'>
-					<div className='w-1/2 flex flex-col text-justify'>
+				<div className='flex justify-between flex-wrap gap-8'>
+					<div className='max-w-xl flex flex-col text-justify'>
 						<Hero
 							pretext='top-notch'
 							title='Steel Bars'
@@ -67,8 +67,8 @@ export default function Page() {
 				</div>
 			</Section>
 			<Section sectionClass='bg-zinc-50 border-y border-zinc-200'>
-				<div className='flex justify-between max-w-screen-xl mx-auto'>
-					<div className='w-1/2 flex flex-col text-justify'>
+				<div className='flex flex-wrap gap-8 justify-between max-w-screen-xl mx-auto'>
+					<div className='max-w-xl flex flex-col text-justify'>
 						<Hero
 							pretext='robust'
 							title='Steel Plates and Sheets'
