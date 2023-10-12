@@ -36,9 +36,19 @@ const gallery = [
 		length: 9,
 	},
 	{
+		label: 'Stainless Steel Railings & Doors',
+		path: '/projects/steel_rail_doors/rails-%d.jpg',
+		length: 8,
+	},
+	{
 		label: 'Miscellaneous Projects',
 		path: '/projects/misc/misc-%d.jpg',
-		length: 34,
+		length: 28,
+	},
+	{
+		label: 'Equipment',
+		path: '/projects/equipment/equipment-%d.jpg',
+		length: 77,
 	},
 ];
 
