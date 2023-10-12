@@ -6,6 +6,7 @@ import {
 	Check,
 	Construction,
 	HardHat,
+	Hash,
 	LucideIcon,
 	ScrollText,
 	Warehouse,
@@ -138,23 +139,31 @@ export default function Page() {
 						</ListCard>
 					</ul>
 				</div>
-				{/* <div className='flex justify-center flex-wrap gap-8'>
+				<div className='flex justify-center flex-wrap gap-8'>
 					<div className='p-8 w-fit'>
 						<h3 className='text-2xl font-semibold mb-8 text-center'>
 							NAICS Codes
 						</h3>
 						<ul className='grid md:grid-cols-2 grid-cols-1 gap-x-16 gap-y-4'>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
-							<ListItem Icon={Hash}>123456 Random NAICS Code</ListItem>
+							<ListItem Icon={Hash}>
+								332312 Fabricated Structural Metal Manufacturing
+							</ListItem>
+							<ListItem Icon={Hash}>332313 Plate Work Manufacturing</ListItem>
+							<ListItem Icon={Hash}>
+								332323 Ornamental & Architectural Metal Work Manufacturing
+							</ListItem>
+							<ListItem Icon={Hash}>
+								332996 Fabricated Pipe & Pipe Fitting Manufacturing
+							</ListItem>
+							<ListItem Icon={Hash}>
+								332999 All Other Miscellaneous Fabricated Metal Product
+							</ListItem>
+							<ListItem Icon={Hash}>
+								423510 Metal Service Centers & Other Metal Merchant
+							</ListItem>
 						</ul>
 					</div>
-				</div> */}
+				</div>
 			</Section>
 			<Section>
 				<Hero
@@ -171,7 +180,7 @@ export default function Page() {
 						className='aspect-square object-cover mx-auto rounded-full shadow-md'
 					/>
 				</div>
-				<div className='text-justify leading-8 text-lg indent-8 w-3/4 mx-auto'>
+				<div className='text-justify leading-8 text-lg indent-8 w-full md:w-3/4 mx-auto'>
 					<p className='mt-6'>
 						Suzzanne Stilwell is the owner and president of Commonwealth Metal
 						Company, a 100% female-owned company. The company has been in
