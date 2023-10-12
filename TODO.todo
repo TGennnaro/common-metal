@@ -1,10 +1,10 @@
 ✘ Add slide-in animations @cancelled(23-09-15 13:10)
 ✔ Add loading animation for images @done(23-09-15 12:02)
 ✔ Set up gmail for contact form @done(23-09-27 15:49)
-☐ Check every picture for copyright
-☐ Mobile responsive
+✔ Check every picture for copyright @done(23-10-05 12:07)
+✔ Mobile responsive @done(23-10-10 17:17)
 ✔ Improve SEO (keywords) @done(23-09-27 15:49)
-☐ Not found page
+✘ Not found page @cancelled(23-10-05 12:07)
 ✔ Logo in deeper burgundy @done(23-09-09 18:27)
 
 Homepage
@@ -17,7 +17,7 @@ Homepage
 About page
 	✔ Remove Meet the Team @done(23-09-09 17:03)
 	✔ Remove core competencies @done(23-09-09 17:05)
-	☐ NAICS codes
+	✔ NAICS codes @done(23-10-10 17:05)
 	✔ Change capability statement @done(23-09-15 12:01)
 	✔ Change Suzzanne picture to centered and rounded-full @done(23-09-09 17:06)
 
@@ -36,8 +36,8 @@ Feature projects
 	✔ Lower Merion High School (Ardmore, PA) @done(23-09-09 18:01)
 
 Gallery
-	☐ Slideshow of major projects at top (philly stadium (supplied metal), philadelphia airport expansion project (architectural drawing), comcast building (supplied steel))
-	☐ Add more pictures
+	✔ Slideshow of major projects at top (philly stadium (supplied metal), philadelphia airport expansion project (architectural drawing), comcast building (supplied steel)) @done(23-10-10 16:52)
+	✔ Add more pictures @done(23-10-12 16:08)
 
 Navbar
 	✔ Add fax number to nav @done(23-09-09 18:17)
@@ -45,5 +45,3 @@ Navbar
 Footer
 	✔ Remove social links @done(23-09-09 18:22)
 	✔ Change logo back to old one on footer @done(23-09-09 18:22)
-
-angled beams channels tubing square and rectangular pipe
