@@ -73,17 +73,17 @@ export default function Slideshow() {
 			<SlideshowItem
 				src='/projects/comcast_building.jpg'
 				title='Philadelphia Comcast Building'
-				description='Supplied metal'
+				description='Supplied metal.'
 			/>
 			<SlideshowItem
 				src='/projects/philly_airport.jpg'
 				title='Philadelphia International Airport Expansion'
-				description='Architectural drawings'
+				description='Supplied structural steel.'
 			/>
 			<SlideshowItem
 				src='/projects/citizens_bank_park.jpg'
 				title="Citizen's Bank Park"
-				description='Supplied metal'
+				description='Supplied metal.'
 			/>
 		</ReactSimplyCarousel>
 	);
