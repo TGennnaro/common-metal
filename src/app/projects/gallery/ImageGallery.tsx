@@ -28,7 +28,7 @@ const gallery = [
 	{
 		label: 'Steel Staircases',
 		path: '/projects/stairs/stairs-%d.jpg',
-		length: 10,
+		length: 7,
 	},
 	{
 		label: 'Carbon Steel Railings with Screen Infills',
@@ -44,11 +44,6 @@ const gallery = [
 		label: 'Miscellaneous Projects',
 		path: '/projects/misc/misc-%d.jpg',
 		length: 28,
-	},
-	{
-		label: 'Equipment',
-		path: '/projects/equipment/equipment-%d.jpg',
-		length: 77,
 	},
 ];
 
