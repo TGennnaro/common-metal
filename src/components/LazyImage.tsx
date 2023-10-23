@@ -13,11 +13,11 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const LazyImage = forwardRef<HTMLImageElement, ImageProps>(
-	({ src, ...props }, ref) => {
+	({ src, alt, ...props }, ref) => {
 		return (
 			<>
 				<Skeleton className='absolute inset-0' />
-				<Image ref={ref} src={src} {...props} />
+				<Image ref={ref} alt={alt} src={src} {...props} />
 			</>
 		);
 	}
