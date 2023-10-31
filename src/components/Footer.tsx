@@ -46,7 +46,7 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className='p-2 text-center'>
-				<a className='text-sm font-medium' href='localhost:3000'>
+				<a className='text-sm font-medium' href='/'>
 					© {new Date().getFullYear()} Commonwealth Metal Company Inc.
 				</a>
 			</div>
