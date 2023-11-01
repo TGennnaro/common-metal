@@ -29,8 +29,8 @@ export async function POST(req: Request) {
 	const body = await req.json();
 	try {
 		const { firstName, lastName, email, phone, message } = schema.parse(body);
-		await new Promise((resolve) => setTimeout(resolve, 2000));
-		sendMail(
+		// await new Promise((resolve) => setTimeout(resolve, 2000));
+		await sendMail(
 			`New message from ${firstName} ${lastName}`,
 			`
 			<html>
